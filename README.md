@@ -134,5 +134,5 @@ I’m a software developer and builder focused on backend architecture, workflow
 
 <div align="center">
   <!-- Waving Footer Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F2FE,50:111827,100:0B0F19&height=100&section=footer" width="100%" alt="Footer Banner" />
+  <img src="https://raw.githubusercontent.com/themeig/themeig/main/assets/footer_dog_cycle.svg" width="100%" alt="Synchronized Dog Day Night Cycle" />
 </div>
