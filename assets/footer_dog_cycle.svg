@@ -24,6 +24,7 @@
   </defs>
 
   <style>
+  <![CDATA[
     /* Synchronized 20s Sky Cycle matching Header */
     @keyframes skyTopColor {
       0%, 100% { stop-color: #1f1d36; }
@@ -116,7 +117,7 @@
     .zzz-1 { animation: floatZ1 3.5s ease-out infinite; }
     .zzz-2 { animation: floatZ2 3.5s ease-out 1.5s infinite; }
 
-    /* Howling Dog Pulse & Wave Effect */
+    /* Howling Dog Pulse and Wave Effect */
     @keyframes howlPulse {
       0%, 100% { transform: rotate(0deg); }
       50% { transform: rotate(-3deg); }
@@ -150,6 +151,7 @@
       transform-origin: 485px 158px;
       animation: tailWag 1.8s ease-in-out infinite;
     }
+    ]]>
   </style>
 
   <!-- Background Sky -->
@@ -194,7 +196,7 @@
       <circle cx="424" cy="157" r="16" fill="#ffffff" />
       <!-- Flop Ear down -->
       <path d="M428,146 Q438,152 434,166 Q427,166 426,154 Z" fill="#cbd5e1" />
-      <!-- Cute Snout & Sleeping Eye -->
+      <!-- Cute Snout and Sleeping Eye -->
       <ellipse cx="414" cy="162" rx="8" ry="6" fill="#f8fafc" />
       <circle cx="410" cy="160" r="2.5" fill="#1e293b" /> <!-- Tiny Black Nose -->
       <!-- Sleeping Happy Eye (curved arc) -->

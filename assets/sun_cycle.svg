@@ -42,6 +42,7 @@
   </defs>
 
   <style>
+  <![CDATA[
     /* Dynamic color transitions for the sky */
     @keyframes skyTopColor {
       0%, 100% { stop-color: #1f1d36; }
@@ -201,6 +202,7 @@
     .shooting-star-2 {
       animation: meteorStreak2 20s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
     }
+    ]]>
   </style>
 
   <!-- Sky Background -->
@@ -253,7 +255,7 @@
     <circle cx="7" cy="-5" r="17" fill="#0f172a" opacity="0.88" />
   </g>
 
-  <!-- Landscape Mountains & Waves Silhouettes -->
+  <!-- Landscape Mountains and Waves Silhouettes -->
   <g opacity="0.95">
     <path d="M0,280 L0,195 Q140,150 280,190 T560,185 Q720,145 900,190 L900,280 Z" fill="#1e1b4b" opacity="0.5" />
     <path d="M0,280 L0,215 Q180,175 380,210 Q600,165 900,215 L900,280 Z" fill="#0f172a" opacity="0.8" />
