@@ -246,7 +246,7 @@
       <ellipse cx="448" cy="170" rx="8" ry="4" fill="#cbd5e1" />
       <ellipse cx="464" cy="170" rx="9" ry="4" fill="#cbd5e1" />
 
-      <!-- Chest & Raised Neck pointing up-left -->
+      <!-- Chest and Raised Neck pointing up-left -->
       <path d="M440,134 L432,108 Q436,100 445,108 L452,130 Z" fill="#ffffff" />
 
       <!-- Head turned up toward the moon -->
