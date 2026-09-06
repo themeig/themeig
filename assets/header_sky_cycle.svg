@@ -25,29 +25,28 @@
       </feMerge>
     </filter>
 
-    <!-- Glow Filter for Shooting Star Sparkle -->
-    <filter id="starGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
-    <!-- Celestial Shooting Star Gradient: Brilliant white head tapering to ethereal cosmos cyan & violet -->
-    <linearGradient id="shootingStarTail" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="15%" stop-color="#e0f2fe" stop-opacity="0.9" />
-      <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.65" />
-      <stop offset="70%" stop-color="#818cf8" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    <!-- Vapor Contrail Gradients (Fine, Slender Atmospheric Smoke Trail) -->
+    <linearGradient id="contrailMist" x1="680" y1="35" x2="240" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="65%" stop-color="#bae6fd" stop-opacity="0.8" />
+      <stop offset="90%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
     </linearGradient>
 
-    <linearGradient id="shootingStarCore" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="contrailDiffuse" x1="680" y1="35" x2="240" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0" />
+      <stop offset="35%" stop-color="#38bdf8" stop-opacity="0.25" />
+      <stop offset="70%" stop-color="#a7f3d0" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Plasma Flash Beam Gradient for Moving Head -->
+    <linearGradient id="plasmaBeam" x1="100%" y1="0%" x2="0%" y2="0%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.8" />
-      <stop offset="75%" stop-color="#bae6fd" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="20%" stop-color="#bae6fd" stop-opacity="0.85" />
+      <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
     </linearGradient>
   </defs>
 
@@ -167,69 +166,101 @@
     }
 
     /* ========================================================================= */
-    /* AUTHENTIC CELESTIAL SHOOTING STAR (CALM 3s GLIDE & NATURAL DYNAMIC TAIL)  */
+    /* SLENDER FASCIO DI LUCE (CALM 1.5s GLIDE) + LINGERING CONTRAIL MIST       */
     /* ========================================================================= */
 
-    /* The star takes a leisurely 3.0s to traverse 250px across the quiet night sky (61% to 76%) */
-    /* Tail grows from 0 length upon atmospheric ignition, stays radiant, then dissolves back to 0 */
-    @keyframes shootingStarGlide {
-      0%, 61.0% {
-        transform: translate(680px, 35px) rotate(164deg) scaleX(0);
+    /* 1. Slender Moving Beam: Glides across the sky in 1.5s (61.5% to 69.0%) */
+    @keyframes meteorStreakFlight {
+      0%, 61.3% {
+        transform: translate(700px, 30px) rotate(166deg);
         opacity: 0;
       }
-      /* Soft atmospheric ignition: tail grows, opacity fades in gently */
-      63.5% {
-        transform: translate(640px, 46px) rotate(164deg) scaleX(0.55);
+      61.8% {
+        opacity: 1;
+      }
+      68.2% {
+        transform: translate(230px, 142px) rotate(166deg);
         opacity: 0.9;
       }
-      /* Peak brilliance: full tail extension, gliding calmly across night sky */
-      67.5% {
-        transform: translate(570px, 66px) rotate(164deg) scaleX(1.0);
-        opacity: 1.0;
-      }
-      /* Serene deceleration & burnout: tail starts shortening and diffusing */
-      72.0% {
-        transform: translate(490px, 89px) rotate(164deg) scaleX(0.65);
-        opacity: 0.65;
-      }
-      /* Final dissolution into cosmic stardust */
-      76.0% {
-        transform: translate(430px, 106px) rotate(164deg) scaleX(0);
+      69.2% {
+        transform: translate(200px, 150px) rotate(166deg);
         opacity: 0;
       }
       100% {
-        transform: translate(430px, 106px) rotate(164deg) scaleX(0);
+        transform: translate(200px, 150px) rotate(166deg);
         opacity: 0;
       }
     }
 
-    .celestial-shooting-star {
-      transform-origin: 0 0;
-      animation: shootingStarGlide 20s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    /* 2. Slender Vapor Contrail (Hangs in the sky, diffuses softly & evaporates) */
+    @keyframes contrailLingering {
+      0%, 61.8% {
+        opacity: 0;
+        transform: scaleY(0.4);
+      }
+      /* Forms smoothly as the meteor beam cuts through */
+      63.0% {
+        opacity: 0.85;
+        transform: scaleY(0.9);
+      }
+      /* Lingers delicately like a fine vapor trail */
+      66.0% {
+        opacity: 0.75;
+        transform: scaleY(1.1);
+      }
+      /* Softly diffuses into the night atmosphere */
+      69.5% {
+        opacity: 0.4;
+        transform: scaleY(1.4);
+      }
+      /* Dissolves away gracefully */
+      73.0% {
+        opacity: 0.08;
+        transform: scaleY(1.7);
+      }
+      74.0%, 100% {
+        opacity: 0;
+        transform: scaleY(2.0);
+      }
     }
 
-    /* Subtle lingering stardust particles in the meteor's wake */
-    @keyframes dustSparkle1 {
-      0%, 64.5% { opacity: 0; transform: scale(0.3); }
-      66.0% { opacity: 0.85; transform: scale(1.0); }
-      69.5% { opacity: 0; transform: scale(0.2); }
+    /* 3. Delicate Stardust Sparks drifting in the wake */
+    @keyframes sparksDrift1 {
+      0%, 62.5% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+      63.5% { opacity: 0.9; transform: translate(-1px, 2px) scale(1.1); }
+      66.0% { opacity: 0.6; transform: translate(-3px, 5px) scale(0.8); }
+      69.0% { opacity: 0; transform: translate(-6px, 9px) scale(0.2); }
       100% { opacity: 0; }
     }
-    @keyframes dustSparkle2 {
-      0%, 67.0% { opacity: 0; transform: scale(0.3); }
-      68.5% { opacity: 0.9; transform: scale(1.0); }
-      72.0% { opacity: 0; transform: scale(0.2); }
+
+    @keyframes sparksDrift2 {
+      0%, 64.0% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+      65.0% { opacity: 0.9; transform: translate(2px, 2px) scale(1.1); }
+      67.5% { opacity: 0.55; transform: translate(3px, 5px) scale(0.8); }
+      70.5% { opacity: 0; transform: translate(5px, 9px) scale(0.2); }
       100% { opacity: 0; }
     }
-    @keyframes dustSparkle3 {
-      0%, 69.5% { opacity: 0; transform: scale(0.3); }
-      71.0% { opacity: 0.8; transform: scale(1.0); }
-      74.5% { opacity: 0; transform: scale(0.2); }
+
+    @keyframes sparksDrift3 {
+      0%, 65.5% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+      66.5% { opacity: 0.9; transform: translate(-1px, 2px) scale(1.2); }
+      69.0% { opacity: 0.6; transform: translate(-4px, 6px) scale(0.8); }
+      72.0% { opacity: 0; transform: translate(-7px, 11px) scale(0.2); }
       100% { opacity: 0; }
     }
-    .dust-1 { animation: dustSparkle1 20s ease-out infinite; }
-    .dust-2 { animation: dustSparkle2 20s ease-out infinite; }
-    .dust-3 { animation: dustSparkle3 20s ease-out infinite; }
+
+    .moving-meteor-beam {
+      animation: meteorStreakFlight 20s cubic-bezier(0.25, 0.7, 0.35, 1) infinite;
+    }
+
+    .lingering-vapor-contrail {
+      transform-origin: 460px 88px;
+      animation: contrailLingering 20s ease-out infinite;
+    }
+
+    .spark-p1 { animation: sparksDrift1 20s ease-out infinite; }
+    .spark-p2 { animation: sparksDrift2 20s ease-out infinite; }
+    .spark-p3 { animation: sparksDrift3 20s ease-out infinite; }
   ]]>
   </style>
 
@@ -253,28 +284,40 @@
     <circle cx="710" cy="120" r="1.4" fill="#ffffff" class="twinkle-fast" />
   </g>
 
-  <!-- Delicate Lingering Stardust Specks along the trajectory -->
-  <g class="shooting-star-dust">
-    <circle cx="610" cy="55" r="1.2" fill="#ffffff" class="dust-1" />
-    <circle cx="550" cy="72" r="1.4" fill="#7dd3fc" class="dust-2" />
-    <circle cx="490" cy="89" r="1.1" fill="#ffffff" class="dust-3" />
+  <!-- ===================================================================== -->
+  <!-- A. LINGERING VAPOR CONTRAIL (SLENDER, ELEGANT MIST TRAIL)             -->
+  <!-- ===================================================================== -->
+  <g class="lingering-vapor-contrail">
+    <!-- Fine outer diffuse aura -->
+    <path d="M680,35 L240,140" stroke="url(#contrailDiffuse)" stroke-width="3.5" stroke-linecap="round" />
+    <!-- Core luminous vapor ribbon -->
+    <path d="M680,35 L240,140" stroke="url(#contrailMist)" stroke-width="1.8" stroke-linecap="round" />
+    <!-- Central hairline glow -->
+    <path d="M680,35 L240,140" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" opacity="0.8" />
+
+    <!-- Delicate Micro-particles / Stardust Embers along the wake -->
+    <circle cx="590" cy="56" r="1.3" fill="#ffffff" class="spark-p1" />
+    <circle cx="560" cy="64" r="0.9" fill="#7dd3fc" class="spark-p1" />
+    <circle cx="530" cy="71" r="1.1" fill="#ffffff" class="spark-p1" />
+    <circle cx="460" cy="88" r="1.4" fill="#ffffff" class="spark-p2" />
+    <circle cx="435" cy="94" r="0.9" fill="#a7f3d0" class="spark-p2" />
+    <circle cx="410" cy="100" r="1.2" fill="#7dd3fc" class="spark-p2" />
+    <circle cx="340" cy="116" r="1.4" fill="#ffffff" class="spark-p3" />
+    <circle cx="315" cy="122" r="1.0" fill="#38bdf8" class="spark-p3" />
+    <circle cx="280" cy="130" r="1.2" fill="#ffffff" class="spark-p3" />
   </g>
 
-  <!-- ========================================================================= -->
-  <!-- AUTHENTIC CELESTIAL SHOOTING STAR (Tapered Comet Tail + Star Twinkle Tip) -->
-  <!-- ========================================================================= -->
-  <g class="celestial-shooting-star">
-    <!-- Outer ethereal cyan/violet cosmic tail -->
-    <line x1="0" y1="0" x2="135" y2="0" stroke="url(#shootingStarTail)" stroke-width="2.6" stroke-linecap="round" />
-    <!-- Inner pure incandescent white core beam -->
-    <line x1="0" y1="0" x2="95" y2="0" stroke="url(#shootingStarCore)" stroke-width="1.2" stroke-linecap="round" />
-
-    <!-- Delicate 4-pointed Star Sparkle at Head (Authentic star flare, NO solid ball) -->
-    <g filter="url(#starGlow)">
-      <circle cx="0" cy="0" r="1.6" fill="#ffffff" />
-      <line x1="-4" y1="0" x2="4" y2="0" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" />
-      <line x1="0" y1="-4" x2="0" y2="4" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" />
-    </g>
+  <!-- ===================================================================== -->
+  <!-- B. THE LUMINOUS METEOR BEAM (SLENDER FASCIO DI LUCE GLIDING CALMLY)   -->
+  <!-- ===================================================================== -->
+  <g class="moving-meteor-beam">
+    <!-- Tapered Luminous Plasma Wedge -->
+    <polygon points="0,0 130,-3 140,-1 0,0" fill="url(#plasmaBeam)" opacity="0.85" />
+    <!-- Fine Central Beam Line -->
+    <line x1="0" y1="0" x2="150" y2="0" stroke="url(#plasmaBeam)" stroke-width="1.8" stroke-linecap="round" />
+    <!-- Delicate Leading Meteor Tip -->
+    <circle cx="0" cy="0" r="2.0" fill="#ffffff" />
+    <circle cx="0" cy="0" r="4.0" fill="#38bdf8" opacity="0.4" />
   </g>
 
   <!-- Animated Sun Group -->
