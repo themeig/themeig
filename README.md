@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Waving Header Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0F19,50:111827,100:00F2FE&height=220&section=header&text=Riccardo%20%E2%80%A2%20themeig&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Algorithmic%20Trading%20%E2%80%A2%20Web3%20%E2%80%A2%20Autonomous%20Engines&descAlignY=58&descAlign=50" width="100%" alt="Header Banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0F19,50:111827,100:00F2FE&height=220&section=header&text=%20%E2%80%A2%20themeig&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Algorithmic%20Trading%20%E2%80%A2%20Web3%20%E2%80%A2%20Autonomous%20Engines&descAlignY=58&descAlign=50" width="100%" alt="Header Banner" />
 
   <!-- Multi-line Dynamic Typing Animation -->
   <a href="https://github.com/themeig">
