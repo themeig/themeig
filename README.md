@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Waving Header Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0F19,50:111827,100:00F2FE&height=220&section=header&text=themeig&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Software%20Engineering%20%E2%80%A2%20Automation%20%E2%80%A2%20AI%20Systems&descAlignY=58&descAlign=50" width="100%" alt="Header Banner" />
+  <img src="https://raw.githubusercontent.com/themeig/themeig/main/assets/sun_cycle.svg" width="100%" alt="Day Night Cycle Banner" />
 
   <!-- Multi-line Dynamic Typing Animation -->
   <a href="https://github.com/themeig">
