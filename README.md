@@ -67,7 +67,7 @@ I’m a software developer and builder focused on backend architecture, workflow
         <img src="https://img.shields.io/badge/Status-Active%20Production-00FF88?style=flat-square" alt="Status" />
         <img src="https://img.shields.io/badge/Stack-Python%20%7C%20AsyncIO%20%7C%20WebSockets-00C7FF?style=flat-square" alt="Stack" />
       </p>
-      <p align="center">Real-time event-driven market automation engine featuring high-frequency WebSocket data streaming, sub-second execution loops, and an interactive Telegram bot controller.</p>
+      <p align="center">Real-time event-driven market automation engine built on the open-source poly-maker foundation, enhanced with custom execution loops, WebSocket streaming, and an interactive Telegram bot controller.</p>
       <p align="center">
         <a href="https://github.com/themeig/PolyMarket_bot"><b>Explore Codebase →</b></a>
       </p>
