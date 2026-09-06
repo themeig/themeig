@@ -9,16 +9,6 @@
 
     <!-- Sun Glow Filter -->
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="10" result="blur1" />
-      <feGaussianBlur stdDeviation="20" result="blur2" />
-      <feMerge>
-        <feMergeNode in="blur2" />
-        <feMergeNode in="blur1" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
-    <filter id="moonGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="8" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -26,24 +16,34 @@
       </feMerge>
     </filter>
 
-    <!-- Shooting Star Trail Gradient -->
-    <linearGradient id="meteorGrad1" x1="0" y1="0" x2="70" y2="-35" gradientUnits="userSpaceOnUse">
+    <filter id="moonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Ultra-Bright Shooting Star Gradient 1 -->
+    <linearGradient id="meteorTail1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.9" />
-      <stop offset="70%" stop-color="#818cf8" stop-opacity="0.3" />
+      <stop offset="20%" stop-color="#38bdf8" stop-opacity="0.95" />
+      <stop offset="60%" stop-color="#818cf8" stop-opacity="0.6" />
       <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
     </linearGradient>
 
-    <linearGradient id="meteorGrad2" x1="0" y1="0" x2="55" y2="-28" gradientUnits="userSpaceOnUse">
+    <!-- Ultra-Bright Shooting Star Gradient 2 -->
+    <linearGradient id="meteorTail2" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="30%" stop-color="#a7f3d0" stop-opacity="0.8" />
+      <stop offset="25%" stop-color="#a7f3d0" stop-opacity="0.95" />
+      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.5" />
       <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
     </linearGradient>
   </defs>
 
   <style>
   <![CDATA[
-    /* Dynamic color transitions for the sky */
+    /* Dynamic color transitions for the sky (20s synchronized cycle) */
     @keyframes skyTopColor {
       0%, 100% { stop-color: #1f1d36; }
       18% { stop-color: #0369a1; }
@@ -119,10 +119,10 @@
       }
     }
 
-    /* Stars Animation */
+    /* Stars Field Animation */
     @keyframes starFade {
       0%, 45% { opacity: 0; }
-      55%, 90% { opacity: 0.9; }
+      55%, 90% { opacity: 0.95; }
       100% { opacity: 0; }
     }
 
@@ -156,51 +156,62 @@
       animation: rayRotate 16s linear infinite;
     }
 
-    /* =================================================== */
-    /* SHOOTING STARS (Active strictly during night phase) */
-    /* =================================================== */
-    @keyframes meteorStreak1 {
-      0%, 65% {
-        transform: translate(680px, -20px);
+    /* ========================================================= */
+    /* ULTRA-VISIBLE SHOOTING STARS DURING NIGHT PHASE (55%-90%) */
+    /* ========================================================= */
+
+    /* Shooting Star 1: Streaks from top-right to mid-left (60% to 66%) */
+    @keyframes meteorPass1 {
+      0%, 59% {
+        transform: translate(750px, 15px) rotate(155deg);
         opacity: 0;
       }
-      66% {
+      60% {
         opacity: 1;
       }
-      70% {
-        transform: translate(260px, 170px);
+      65.5% {
+        transform: translate(260px, 150px) rotate(155deg);
+        opacity: 1;
+      }
+      66.5% {
+        transform: translate(220px, 160px) rotate(155deg);
         opacity: 0;
       }
-      71%, 100% {
-        transform: translate(260px, 170px);
-        opacity: 0;
-      }
-    }
-
-    @keyframes meteorStreak2 {
-      0%, 78% {
-        transform: translate(520px, -20px);
-        opacity: 0;
-      }
-      79% {
-        opacity: 0.9;
-      }
-      83% {
-        transform: translate(160px, 150px);
-        opacity: 0;
-      }
-      84%, 100% {
-        transform: translate(160px, 150px);
+      67%, 100% {
+        transform: translate(220px, 160px) rotate(155deg);
         opacity: 0;
       }
     }
 
-    .shooting-star-1 {
-      animation: meteorStreak1 20s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+    /* Shooting Star 2: Streaks across mid-sky (76% to 82%) */
+    @keyframes meteorPass2 {
+      0%, 75% {
+        transform: translate(620px, 30px) rotate(150deg);
+        opacity: 0;
+      }
+      76% {
+        opacity: 1;
+      }
+      81.5% {
+        transform: translate(140px, 140px) rotate(150deg);
+        opacity: 1;
+      }
+      82.5% {
+        transform: translate(100px, 150px) rotate(150deg);
+        opacity: 0;
+      }
+      83%, 100% {
+        transform: translate(100px, 150px) rotate(150deg);
+        opacity: 0;
+      }
     }
 
-    .shooting-star-2 {
-      animation: meteorStreak2 20s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+    .meteor-1 {
+      animation: meteorPass1 20s linear infinite;
+    }
+
+    .meteor-2 {
+      animation: meteorPass2 20s linear infinite;
     }
     ]]>
   </style>
@@ -210,40 +221,53 @@
 
   <!-- Stars Layer -->
   <g class="stars-field">
-    <circle cx="120" cy="45" r="1.4" fill="#ffffff" class="twinkle-fast" />
-    <circle cx="180" cy="90" r="1.8" fill="#93c5fd" class="twinkle-slow" />
-    <circle cx="240" cy="35" r="1.2" fill="#ffffff" class="twinkle-fast" />
-    <circle cx="310" cy="80" r="2.0" fill="#ffffff" class="twinkle-slow" />
-    <circle cx="380" cy="40" r="1.3" fill="#93c5fd" class="twinkle-fast" />
-    <circle cx="520" cy="50" r="1.7" fill="#ffffff" class="twinkle-slow" />
-    <circle cx="580" cy="85" r="1.4" fill="#ffffff" class="twinkle-fast" />
-    <circle cx="660" cy="35" r="2.2" fill="#93c5fd" class="twinkle-slow" />
-    <circle cx="730" cy="75" r="1.5" fill="#ffffff" class="twinkle-fast" />
-    <circle cx="800" cy="45" r="1.8" fill="#ffffff" class="twinkle-slow" />
-    <circle cx="850" cy="110" r="1.3" fill="#93c5fd" class="twinkle-fast" />
-    <circle cx="150" cy="130" r="1.5" fill="#ffffff" class="twinkle-slow" />
-    <circle cx="710" cy="120" r="1.2" fill="#ffffff" class="twinkle-fast" />
+    <circle cx="120" cy="45" r="1.6" fill="#ffffff" class="twinkle-fast" />
+    <circle cx="180" cy="90" r="2.0" fill="#93c5fd" class="twinkle-slow" />
+    <circle cx="240" cy="35" r="1.4" fill="#ffffff" class="twinkle-fast" />
+    <circle cx="310" cy="80" r="2.2" fill="#ffffff" class="twinkle-slow" />
+    <circle cx="380" cy="40" r="1.5" fill="#93c5fd" class="twinkle-fast" />
+    <circle cx="520" cy="50" r="1.9" fill="#ffffff" class="twinkle-slow" />
+    <circle cx="580" cy="85" r="1.6" fill="#ffffff" class="twinkle-fast" />
+    <circle cx="660" cy="35" r="2.4" fill="#93c5fd" class="twinkle-slow" />
+    <circle cx="730" cy="75" r="1.7" fill="#ffffff" class="twinkle-fast" />
+    <circle cx="800" cy="45" r="2.0" fill="#ffffff" class="twinkle-slow" />
+    <circle cx="850" cy="110" r="1.5" fill="#93c5fd" class="twinkle-fast" />
+    <circle cx="150" cy="130" r="1.7" fill="#ffffff" class="twinkle-slow" />
+    <circle cx="710" cy="120" r="1.4" fill="#ffffff" class="twinkle-fast" />
   </g>
 
-  <!-- Shooting Stars (Pass during night cycle) -->
-  <g class="shooting-star-1" filter="url(#glow)">
-    <line x1="0" y1="0" x2="70" y2="-35" stroke="url(#meteorGrad1)" stroke-width="2.6" stroke-linecap="round" />
-    <circle cx="0" cy="0" r="2.8" fill="#ffffff" />
-  </g>
+  <!-- ==================================================== -->
+  <!-- HIGH-VISIBILITY SHOOTING STARS (NIGHT PASSES)        -->
+  <!-- ==================================================== -->
 
-  <g class="shooting-star-2" filter="url(#glow)">
-    <line x1="0" y1="0" x2="55" y2="-28" stroke="url(#meteorGrad2)" stroke-width="1.8" stroke-linecap="round" />
+  <!-- First Shooting Star (Active at 60%-66% of cycle) -->
+  <g class="meteor-1">
+    <!-- Bright Long Luminous Tail -->
+    <line x1="0" y1="0" x2="130" y2="0" stroke="url(#meteorTail1)" stroke-width="3" stroke-linecap="round" />
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+    <!-- Bright Head with Multi-Layer Glow -->
+    <circle cx="0" cy="0" r="6" fill="#38bdf8" opacity="0.5" />
+    <circle cx="0" cy="0" r="3.5" fill="#bae6fd" />
     <circle cx="0" cy="0" r="2" fill="#ffffff" />
+  </g>
+
+  <!-- Second Shooting Star (Active at 76%-82% of cycle) -->
+  <g class="meteor-2">
+    <!-- Bright Long Luminous Tail -->
+    <line x1="0" y1="0" x2="110" y2="0" stroke="url(#meteorTail2)" stroke-width="2.6" stroke-linecap="round" />
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" />
+    <!-- Bright Head -->
+    <circle cx="0" cy="0" r="5" fill="#34d399" opacity="0.5" />
+    <circle cx="0" cy="0" r="3" fill="#a7f3d0" />
+    <circle cx="0" cy="0" r="1.8" fill="#ffffff" />
   </g>
 
   <!-- Animated Sun Group -->
   <g class="sun-group" filter="url(#glow)">
-    <!-- Rotating rays -->
     <g class="sun-rays">
       <circle cx="0" cy="0" r="38" fill="#fef08a" opacity="0.25" />
       <polygon points="0,-46 7,-32 30,-30 32,-7 46,0 32,7 30,30 7,32 0,46 -7,32 -30,30 -32,7 -46,0 -32,-7 -30,-30 -7,-32" fill="#fde047" opacity="0.4" />
     </g>
-    <!-- Sun disk -->
     <circle cx="0" cy="0" r="26" fill="#fef9c3" />
     <circle cx="0" cy="0" r="22" fill="#facc15" />
     <circle cx="0" cy="0" r="17" fill="#fef08a" />
