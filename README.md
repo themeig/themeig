@@ -5,7 +5,7 @@
 
   <!-- Multi-line Dynamic Typing Animation -->
   <a href="https://github.com/themeig">
-    <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=23&duration=2500&pause=1200&color=00F2FE&center=true&vCenter=true&multiline=true&width=700&height=80&lines=High-Frequency+Algorithmic+Trading+%26+Quant+Systems;Autonomous+Execution+Engines+on+Polymarket+%26+EVM;Engineering+High-Impact+Software+that+Scales" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=23&duration=2500&pause=1200&color=00F2FE&center=true&vCenter=true&multiline=true&width=700&height=80&lines=Welcome+to+my+github" alt="Typing SVG" />
   </a>
 
   <!-- Quick Badges -->
