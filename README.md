@@ -14,6 +14,7 @@
     <a href="https://t.me/rikmillo"><img src="https://img.shields.io/badge/Telegram-%40rikmillo-2CA5E0?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"></a>
     <img src="https://img.shields.io/badge/Focus-Software%20%26%20Automation-00C7FF?style=flat-square" alt="Focus">
     <img src="https://img.shields.io/badge/Status-Building%2024%2F7-00FF88?style=flat-square" alt="Status">
+    <img src="https://img.shields.io/badge/Powered%20By-Antigravity-8A2BE2?style=flat-square&logo=google&logoColor=white" alt="Antigravity">
   </p>
 
 </div>
@@ -28,7 +29,7 @@ I’m a software developer and builder focused on backend architecture, workflow
 
 * 🛠️ **Backend & Architecture:** Designing robust APIs, asynchronous data pipelines, and scalable services.
 * ⚡ **Automation & Systems:** Building autonomous workflows, integrations, and bots to streamline processes and eliminate friction.
-* 🤖 **AI & Modern Tech:** Exploring applied AI, autonomous agents, and developer tooling.
+* 🤖 **AI & Agentic Systems:** Active user and builder with **Antigravity**, leveraging agentic coding workflows, autonomous multi-agent pipelines, and modern AI developer tooling.
 * 🚀 **Mindset:** Ship fast, write maintainable code, and solve real-world problems with practical engineering.
 
 ---
@@ -97,6 +98,7 @@ I’m a software developer and builder focused on backend architecture, workflow
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Antigravity](https://img.shields.io/badge/Antigravity-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![Telegram API](https://img.shields.io/badge/Telegram_Bot_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
 ![Web3](https://img.shields.io/badge/Web3%20%2F%20EVM-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white)
 
