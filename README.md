@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Waving Header Banner -->
-  <img src="./assets/sun_cycle.svg" width="100%" alt="Day Night Cycle Banner" />
+  <img src="./assets/sun_cycle.svg?v=2" width="100%" alt="Day Night Cycle Banner" />
 
   <!-- Multi-line Dynamic Typing Animation -->
   <a href="https://github.com/themeig">
@@ -136,5 +136,5 @@ I’m a software developer and builder focused on backend architecture, workflow
 
 <div align="center">
   <!-- Waving Footer Banner -->
-  <img src="./assets/footer_dog_cycle.svg" width="100%" alt="Synchronized Dog Day Night Cycle" />
+  <img src="./assets/footer_dog_cycle.svg?v=2" width="100%" alt="Synchronized Dog Day Night Cycle" />
 </div>
