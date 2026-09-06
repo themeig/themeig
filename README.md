@@ -66,9 +66,10 @@ I’m a software developer and builder focused on backend architecture, workflow
       <h3 align="center">🦅 PolyMarket_bot</h3>
       <p align="center">
         <img src="https://img.shields.io/badge/Status-Active%20Production-00FF88?style=flat-square" alt="Status" />
-        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20AsyncIO%20%7C%20WebSockets-00C7FF?style=flat-square" alt="Stack" />
+        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20AsyncIO%20%7C%20Polygon-00C7FF?style=flat-square" alt="Stack" />
+        <img src="https://img.shields.io/badge/Strategy-Liquidity%20Rewards%20%26%20Arb-8247E5?style=flat-square" alt="Strategy" />
       </p>
-      <p align="center">Real-time event-driven market automation engine built on the open-source poly-maker foundation, enhanced with custom execution loops, WebSocket streaming, and an interactive Telegram bot controller.</p>
+      <p align="center">Institutional-grade prediction market making and logical arbitrage engine. Automates daily Polymarket liquidity rewards harvesting, Avellaneda-Stoikov spread quoting, and zero-risk on-chain complete set token merging on Polygon.</p>
       <p align="center">
         <a href="https://github.com/themeig/PolyMarket_bot"><b>Explore Codebase →</b></a>
       </p>
