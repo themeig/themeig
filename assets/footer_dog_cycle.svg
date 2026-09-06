@@ -12,15 +12,6 @@
       <stop offset="0%" stop-color="#1e293b" />
       <stop offset="100%" stop-color="#090d16" />
     </linearGradient>
-
-    <!-- Glow Filter -->
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
   </defs>
 
   <style>
@@ -69,89 +60,143 @@
     }
     .twinkle { animation: starPulse 2.4s ease-in-out infinite; }
 
-    /* Sleeping Dog Visibility: Active in Day (0% to 48%, 95% to 100%) */
-    @keyframes sleepState {
-      0%, 45% { opacity: 1; pointer-events: auto; }
-      48%, 92% { opacity: 0; pointer-events: none; }
-      95%, 100% { opacity: 1; pointer-events: auto; }
+    /* ========================================================== */
+    /* UNIFIED DOG SKELETON: CONTINUOUS ORGANIC MOTION (NO CUTS!)  */
+    /* ========================================================== */
+
+    /* 1. Torso Spine: Smoothly rises from lying flat to sitting upright */
+    @keyframes spineMotion {
+      0%, 45% {
+        /* Sleeping: lying down flat */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      /* Gradual wake-up: body rotates upward smoothly */
+      53% {
+        /* Upright sitting posture */
+        transform: translate(-4px, -18px) rotate(-46deg);
+      }
+      54%, 88% {
+        /* Howling at the moon: rhythmic chest expansion */
+        transform: translate(-4px, -18px) rotate(-46deg);
+      }
+      /* Gradual settle down: body gently lowers back to the hill */
+      95%, 100% {
+        /* Curled back into deep sleep */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
     }
 
-    /* Howling Dog Visibility: Active in Night (50% to 92%) */
-    @keyframes howlState {
-      0%, 48% { opacity: 0; pointer-events: none; }
-      52%, 88% { opacity: 1; pointer-events: auto; }
-      92%, 100% { opacity: 0; pointer-events: none; }
+    /* 2. Head & Neck: Smoothly raises from ground level to skyward howl */
+    @keyframes headMotion {
+      0%, 45% {
+        /* Resting peacefully near ground */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      /* Stirs and raises head smoothly into the air */
+      53% {
+        /* Head raised up high, tilted 35deg toward the moon */
+        transform: translate(14px, -52px) rotate(32deg);
+      }
+      55%, 88% {
+        /* Singing/howling motion: subtle rhythmic vibration */
+        transform: translate(14px, -52px) rotate(32deg);
+      }
+      /* Smoothly lowers head back down to paws */
+      95%, 100% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
     }
 
-    .sleeping-dog-box {
-      animation: sleepState 20s ease-in-out infinite;
-    }
-
-    .howling-dog-box {
-      animation: howlState 20s ease-in-out infinite;
-    }
-
-    /* Sleeping Dog Breathing Motion */
-    @keyframes dogBreathe {
+    /* 3. Subtle Breathing Motion while sleeping (chest gently rises/falls) */
+    @keyframes gentleBreathing {
       0%, 100% { transform: scale(1, 1); }
-      50% { transform: scale(1.02, 1.05); }
+      50% { transform: scale(1.02, 1.04); }
     }
-    .dog-breathe {
+    .sleeping-breath {
       transform-origin: 450px 165px;
-      animation: dogBreathe 3s ease-in-out infinite;
+      animation: gentleBreathing 3.2s ease-in-out infinite;
     }
 
-    /* Floating Zzz */
-    @keyframes floatZ1 {
-      0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
-      30% { opacity: 0.8; }
-      80% { opacity: 0.4; }
-      100% { opacity: 0; transform: translate(16px, -28px) scale(1.1); }
+    /* 4. Tail: Lying curled during day, wagging happily upright at night */
+    @keyframes tailMotion {
+      0%, 45% {
+        /* Curled against hip, gentle tail-tip flick */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      53% {
+        /* Raises upright */
+        transform: translate(3px, -10px) rotate(42deg);
+      }
+      55%, 88% {
+        /* Wagging happily in the night air */
+        transform: translate(3px, -10px) rotate(52deg);
+      }
+      95%, 100% {
+        /* Lowers gently back */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
     }
-    @keyframes floatZ2 {
-      0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
-      30% { opacity: 0.8; }
-      80% { opacity: 0.4; }
-      100% { opacity: 0; transform: translate(22px, -36px) scale(1.3); }
-    }
-    .zzz-1 { animation: floatZ1 3.5s ease-out infinite; }
-    .zzz-2 { animation: floatZ2 3.5s ease-out 1.5s infinite; }
 
-    /* Howling Dog Pulse and Wave Effect */
-    @keyframes howlPulse {
+    @keyframes tailWagNight {
       0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-3deg); }
-    }
-    .howl-body {
-      transform-origin: 450px 170px;
-      animation: howlPulse 3s ease-in-out infinite;
+      50% { transform: rotate(14deg); }
     }
 
-    /* Acoustic Howl Waves */
+    /* 5. Snout Mouth Open during Howl */
+    @keyframes mouthHowl {
+      0%, 48% { opacity: 0; }
+      53%, 89% { opacity: 1; }
+      94%, 100% { opacity: 0; }
+    }
+
+    /* 6. Sound Waves: Expand outward only while howling at night */
     @keyframes soundRings {
-      0% { opacity: 0; transform: scale(0.5); }
-      40% { opacity: 0.75; }
-      100% { opacity: 0; transform: scale(1.7); }
+      0% { opacity: 0; transform: scale(0.4); }
+      35% { opacity: 0.65; }
+      100% { opacity: 0; transform: scale(1.8); }
     }
-    .sound-wave-1 {
-      transform-origin: 432px 98px;
-      animation: soundRings 2.2s ease-out infinite;
+    .howl-wave-1 {
+      transform-origin: 428px 96px;
+      animation: soundRings 2.4s ease-out infinite;
     }
-    .sound-wave-2 {
-      transform-origin: 432px 98px;
-      animation: soundRings 2.2s ease-out 0.8s infinite;
+    .howl-wave-2 {
+      transform-origin: 428px 96px;
+      animation: soundRings 2.4s ease-out 1.2s infinite;
     }
 
-    /* Wagging Tail when happy */
-    @keyframes tailWag {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(8deg); }
+    @keyframes wavesVisibility {
+      0%, 52% { opacity: 0; }
+      55%, 88% { opacity: 1; }
+      92%, 100% { opacity: 0; }
     }
+    .sound-waves-group {
+      animation: wavesVisibility 20s ease-in-out infinite;
+    }
+
+    .dog-spine {
+      transform-origin: 462px 165px;
+      animation: spineMotion 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .dog-head {
+      transform-origin: 436px 156px;
+      animation: headMotion 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
     .dog-tail {
-      transform-origin: 485px 158px;
-      animation: tailWag 1.8s ease-in-out infinite;
+      transform-origin: 474px 158px;
+      animation: tailMotion 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
-    ]]>
+
+    .dog-tail-wag {
+      transform-origin: 474px 158px;
+      animation: tailWagNight 1.8s ease-in-out infinite;
+    }
+
+    .mouth-open {
+      animation: mouthHowl 20s ease-in-out infinite;
+    }
+  ]]>
   </style>
 
   <!-- Background Sky -->
@@ -174,98 +219,66 @@
   <path d="M0,220 L0,175 Q200,150 450,152 T900,170 L900,220 Z" fill="url(#hillGrad)" />
   <path d="M0,220 L0,185 Q250,165 520,168 T900,180 L900,220 Z" fill="#06090e" opacity="0.9" />
 
-  <!-- ==================================================== -->
-  <!-- 1. SLEEPING DOG (Active in Day / Daytime phase)      -->
-  <!-- ==================================================== -->
-  <g class="sleeping-dog-box">
-    <g class="dog-breathe">
-      <!-- Dog Shadow -->
-      <ellipse cx="450" cy="172" rx="42" ry="9" fill="#04060a" opacity="0.6" />
-
-      <!-- Dog Curled Body -->
-      <ellipse cx="448" cy="154" rx="30" ry="20" fill="#f8fafc" />
-      <ellipse cx="448" cy="154" rx="27" ry="17" fill="#f1f5f9" />
-
-      <!-- Spot on back (stylized cute mark) -->
-      <path d="M438,142 Q450,136 458,144 Q452,154 440,150 Z" fill="#94a3b8" opacity="0.4" />
-
-      <!-- Dog Tail tucked -->
-      <path d="M472,158 Q484,152 480,144 Q475,142 473,150 Z" fill="#f1f5f9" class="dog-tail" />
-
-      <!-- Dog Head resting down -->
-      <circle cx="424" cy="157" r="16" fill="#ffffff" />
-      <!-- Flop Ear down -->
-      <path d="M428,146 Q438,152 434,166 Q427,166 426,154 Z" fill="#cbd5e1" />
-      <!-- Cute Snout and Sleeping Eye -->
-      <ellipse cx="414" cy="162" rx="8" ry="6" fill="#f8fafc" />
-      <circle cx="410" cy="160" r="2.5" fill="#1e293b" /> <!-- Tiny Black Nose -->
-      <!-- Sleeping Happy Eye (curved arc) -->
-      <path d="M420,154 Q423,158 426,154" stroke="#475569" stroke-width="1.8" fill="none" stroke-linecap="round" />
-
-      <!-- Paws tucked -->
-      <ellipse cx="432" cy="168" rx="7" ry="4" fill="#e2e8f0" />
-      <ellipse cx="452" cy="168" rx="8" ry="4" fill="#e2e8f0" />
-    </g>
-
-    <!-- Floating Zzz animation -->
-    <g fill="#93c5fd" font-family="'Space Grotesk', sans-serif" font-weight="700">
-      <text x="408" y="142" font-size="14" class="zzz-1">z</text>
-      <text x="418" y="132" font-size="18" class="zzz-2">Z</text>
-    </g>
-
-    <!-- Daytime Status Caption -->
-    <text x="50%" y="202" text-anchor="middle" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="12" font-weight="600" fill="#94a3b8" letter-spacing="1.5">
-      ☀️ DAYTIME • SLEEPING &amp; CHARGING BATTERIES
-    </text>
+  <!-- Acoustic Howl Waves (Subtle expanding rings, active during night howl) -->
+  <g class="sound-waves-group">
+    <circle cx="428" cy="96" r="16" stroke="#38bdf8" stroke-width="1.8" fill="none" class="howl-wave-1" />
+    <circle cx="428" cy="96" r="28" stroke="#818cf8" stroke-width="1.4" fill="none" class="howl-wave-2" />
   </g>
 
-  <!-- ==================================================== -->
-  <!-- 2. HOWLING DOG (Active in Night / Nighttime phase)   -->
-  <!-- ==================================================== -->
-  <g class="howling-dog-box">
-    <!-- Acoustic Sound Waves radiating into the night -->
-    <g>
-      <circle cx="432" cy="98" r="18" stroke="#38bdf8" stroke-width="2" fill="none" class="sound-wave-1" opacity="0.6" />
-      <circle cx="432" cy="98" r="32" stroke="#818cf8" stroke-width="1.6" fill="none" class="sound-wave-2" opacity="0.4" />
-      <text x="390" y="82" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#38bdf8" letter-spacing="2" filter="url(#softGlow)">
-        AWOOO~
-      </text>
+  <!-- ============================================================== -->
+  <!-- SINGLE ORGANIC DOG: CONTINUOUS ANATOMICAL ANIMATION (ZERO CUTS) -->
+  <!-- ============================================================== -->
+  <g id="organicDog">
+    <!-- Ground Shadow (expands/contracts naturally) -->
+    <ellipse cx="452" cy="173" rx="38" ry="8" fill="#04060a" opacity="0.65" />
+
+    <!-- 1. Hind Leg and Hip (Remains comfortably planted on the hill) -->
+    <ellipse cx="462" cy="163" rx="14" ry="11" fill="#e2e8f0" />
+    <ellipse cx="464" cy="170" rx="9" ry="4" fill="#cbd5e1" />
+
+    <!-- 2. Tail (Animates from flat sleeping tuck to alert night wag) -->
+    <g class="dog-tail">
+      <g class="dog-tail-wag">
+        <path d="M472,158 Q486,150 482,138 Q476,138 474,148 Z" fill="#f1f5f9" />
+      </g>
     </g>
 
-    <g class="howl-body">
-      <!-- Shadow under sitting dog -->
-      <ellipse cx="452" cy="173" rx="34" ry="8" fill="#020617" opacity="0.75" />
-
-      <!-- Dog Tail wagging up -->
-      <path d="M474,162 Q490,150 488,135 Q482,134 478,146 Z" fill="#f1f5f9" class="dog-tail" />
-
-      <!-- Body sitting upright -->
-      <path d="M442,168 L440,132 Q445,120 455,128 L468,168 Z" fill="#f8fafc" />
-      <!-- Hind Leg / Hip -->
-      <ellipse cx="462" cy="162" rx="14" ry="11" fill="#e2e8f0" />
-      <ellipse cx="448" cy="170" rx="8" ry="4" fill="#cbd5e1" />
-      <ellipse cx="464" cy="170" rx="9" ry="4" fill="#cbd5e1" />
-
-      <!-- Chest and Raised Neck pointing up-left -->
-      <path d="M440,134 L432,108 Q436,100 445,108 L452,130 Z" fill="#ffffff" />
-
-      <!-- Head turned up toward the moon -->
-      <circle cx="438" cy="106" r="13" fill="#ffffff" />
-      <!-- Ear tilted back in howl -->
-      <path d="M444,103 Q456,108 454,120 Q446,118 444,110 Z" fill="#94a3b8" />
-      <!-- Snout pointing up-left to the sky (open mouth) -->
-      <path d="M434,102 L424,94 Q428,90 436,96 Z" fill="#f8fafc" />
-      <!-- Tiny nose tip -->
-      <circle cx="423" cy="93" r="2.2" fill="#0f172a" />
-      <!-- Open mouth howling gap -->
-      <path d="M428,99 L424,96 L432,102 Z" fill="#0f172a" />
-      <!-- Closed focused eye singing/howling -->
-      <path d="M434,105 Q437,108 440,105" stroke="#334155" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <!-- 3. Torso & Spine (Pivots up smoothly from horizontal sleep to upright sit) -->
+    <g class="dog-spine">
+      <g class="sleeping-breath">
+        <!-- Main Torso Body -->
+        <ellipse cx="448" cy="155" rx="28" ry="18" fill="#f8fafc" />
+        <ellipse cx="448" cy="155" rx="25" ry="15" fill="#f1f5f9" />
+        <!-- Soft Spot mark on back -->
+        <path d="M438,144 Q450,138 456,146 Q450,154 440,150 Z" fill="#94a3b8" opacity="0.35" />
+        <!-- Front Paws resting -->
+        <ellipse cx="432" cy="168" rx="7" ry="4" fill="#e2e8f0" />
+      </g>
     </g>
 
-    <!-- Nighttime Status Caption -->
-    <text x="50%" y="202" text-anchor="middle" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="12" font-weight="600" fill="#38bdf8" letter-spacing="1.5" filter="url(#softGlow)">
-      🌙 NIGHTTIME • HOWLING AT THE MOON &amp; CODING
-    </text>
+    <!-- 4. Head, Neck & Snout (Raises smoothly into the night sky) -->
+    <g class="dog-head">
+      <!-- Neck Base -->
+      <path d="M432,158 L426,146 Q434,142 438,154 Z" fill="#ffffff" />
+
+      <!-- Head Circle -->
+      <circle cx="424" cy="154" r="15" fill="#ffffff" />
+
+      <!-- Flop Ear (relaxes down) -->
+      <path d="M428,144 Q438,150 435,163 Q427,163 426,152 Z" fill="#cbd5e1" />
+
+      <!-- Snout -->
+      <ellipse cx="414" cy="158" rx="8" ry="6" fill="#f8fafc" />
+      <!-- Black Nose Tip -->
+      <circle cx="410" cy="156" r="2.4" fill="#1e293b" />
+
+      <!-- Sleeping Calm Eye (curved happy arc) -->
+      <path d="M420,151 Q423,155 426,151" stroke="#475569" stroke-width="1.8" fill="none" stroke-linecap="round" />
+
+      <!-- Howling Open Mouth (Smoothly appears when neck arches up) -->
+      <g class="mouth-open">
+        <path d="M414,157 L410,155 L415,160 Z" fill="#0f172a" />
+      </g>
+    </g>
   </g>
 </svg>
