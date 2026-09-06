@@ -67,21 +67,15 @@
     /* 1. Torso Spine: Smoothly rises from lying flat to sitting upright */
     @keyframes spineMotion {
       0%, 45% {
-        /* Sleeping: lying down flat */
         transform: translate(0px, 0px) rotate(0deg);
       }
-      /* Gradual wake-up: body rotates upward smoothly */
       53% {
-        /* Upright sitting posture */
         transform: translate(-4px, -18px) rotate(-46deg);
       }
       54%, 88% {
-        /* Howling at the moon: rhythmic chest expansion */
         transform: translate(-4px, -18px) rotate(-46deg);
       }
-      /* Gradual settle down: body gently lowers back to the hill */
       95%, 100% {
-        /* Curled back into deep sleep */
         transform: translate(0px, 0px) rotate(0deg);
       }
     }
@@ -89,19 +83,14 @@
     /* 2. Head & Neck: Smoothly raises from ground level to skyward howl */
     @keyframes headMotion {
       0%, 45% {
-        /* Resting peacefully near ground */
         transform: translate(0px, 0px) rotate(0deg);
       }
-      /* Stirs and raises head smoothly into the air */
       53% {
-        /* Head raised up high, tilted 35deg toward the moon */
         transform: translate(14px, -52px) rotate(32deg);
       }
       55%, 88% {
-        /* Singing/howling motion: subtle rhythmic vibration */
         transform: translate(14px, -52px) rotate(32deg);
       }
-      /* Smoothly lowers head back down to paws */
       95%, 100% {
         transform: translate(0px, 0px) rotate(0deg);
       }
@@ -120,19 +109,15 @@
     /* 4. Tail: Lying curled during day, wagging happily upright at night */
     @keyframes tailMotion {
       0%, 45% {
-        /* Curled against hip, gentle tail-tip flick */
         transform: translate(0px, 0px) rotate(0deg);
       }
       53% {
-        /* Raises upright */
         transform: translate(3px, -10px) rotate(42deg);
       }
       55%, 88% {
-        /* Wagging happily in the night air */
         transform: translate(3px, -10px) rotate(52deg);
       }
       95%, 100% {
-        /* Lowers gently back */
         transform: translate(0px, 0px) rotate(0deg);
       }
     }
@@ -171,6 +156,34 @@
     }
     .sound-waves-group {
       animation: wavesVisibility 20s ease-in-out infinite;
+    }
+
+    /* 7. Floating Zzz: Active strictly while sleeping in daytime */
+    @keyframes floatZ1 {
+      0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+      30% { opacity: 0.85; }
+      80% { opacity: 0.4; }
+      100% { opacity: 0; transform: translate(16px, -28px) scale(1.1); }
+    }
+    @keyframes floatZ2 {
+      0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+      30% { opacity: 0.85; }
+      80% { opacity: 0.4; }
+      100% { opacity: 0; transform: translate(22px, -36px) scale(1.3); }
+    }
+    .zzz-1 { animation: floatZ1 3.5s ease-out infinite; }
+    .zzz-2 { animation: floatZ2 3.5s ease-out 1.5s infinite; }
+
+    @keyframes zzzVisibility {
+      0%, 45% { opacity: 1; }
+      47%, 93% { opacity: 0; }
+      95%, 100% { opacity: 1; }
+    }
+    .sleeping-zzz-group {
+      animation: zzzVisibility 20s ease-in-out infinite;
+      fill: #93c5fd;
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-weight: 700;
     }
 
     .dog-spine {
@@ -223,6 +236,12 @@
   <g class="sound-waves-group">
     <circle cx="428" cy="96" r="16" stroke="#38bdf8" stroke-width="1.8" fill="none" class="howl-wave-1" />
     <circle cx="428" cy="96" r="28" stroke="#818cf8" stroke-width="1.4" fill="none" class="howl-wave-2" />
+  </g>
+
+  <!-- Floating Sleeping Zzz Letters (Only while asleep during day) -->
+  <g class="sleeping-zzz-group">
+    <text x="406" y="142" font-size="14" class="zzz-1">z</text>
+    <text x="416" y="132" font-size="18" class="zzz-2">Z</text>
   </g>
 
   <!-- ============================================================== -->
