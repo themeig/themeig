@@ -1,45 +1,78 @@
 <div align="center">
 
-  <!-- Header Typing Animation -->
-  <a href="https://github.com/themeig">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00FF9D&center=true&vCenter=true&width=650&height=50&lines=Hi+%F0%9F%91%8B%2C+I'm+Riccardo+(%40themeig);Algorithmic+Trading+%26+Quant+Dev;Web3+%26+Prediction+Markets;Building+Autonomous+AI+%26+Automation+Engines" alt="Typing SVG" />
-  </a>
+  <!-- Waving Header Banner -->
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0F19,50:111827,100:00F2FE&height=220&section=header&text=Riccardo%20%E2%80%A2%20themeig&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Algorithmic%20Trading%20%E2%80%A2%20Web3%20%E2%80%A2%20Autonomous%20Engines&descAlignY=58&descAlign=50" width="100%" alt="Header Banner" />
 
-  <p align="center">
-    <strong>Software Developer • Algorithmic Trading • Automation Systems • Web3 Enthusiast</strong>
-  </p>
+  <!-- Multi-line Dynamic Typing Animation -->
+  <a href="https://github.com/themeig">
+    <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=23&duration=2500&pause=1200&color=00F2FE&center=true&vCenter=true&multiline=true&width=700&height=80&lines=High-Frequency+Algorithmic+Trading+%26+Quant+Systems;Autonomous+Execution+Engines+on+Polymarket+%26+EVM;Engineering+High-Impact+Software+that+Scales" alt="Typing SVG" />
+  </a>
 
   <!-- Quick Badges -->
   <p align="center">
     <a href="mailto:riccardoma07@gmail.com"><img src="https://img.shields.io/badge/Email-riccardoma07%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"></a>
+    <a href="https://t.me/rikmillo"><img src="https://img.shields.io/badge/Telegram-%40rikmillo-2CA5E0?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"></a>
     <img src="https://img.shields.io/badge/Focus-Quant%20%26%20Automation-00C7FF?style=flat-square" alt="Focus">
-    <img src="https://img.shields.io/badge/Location-Italy-009246?style=flat-square" alt="Location">
-    <img src="https://img.shields.io/badge/Status-Building%20Cool%20Stuff-brightgreen?style=flat-square" alt="Status">
+    <img src="https://img.shields.io/badge/Status-Building%2024%2F7-00FF88?style=flat-square" alt="Status">
   </p>
 
 </div>
 
 ---
 
-### 🚀 About Me
+### ⚡ About Me
 
-```python
-class Developer:
-    def __init__(self):
-        self.name = "Riccardo"
-        self.handle = "@themeig"
-        self.role = "Quant Developer & Software Engineer"
-        self.passions = [
-            "Algorithmic Trading & High-Frequency Market Making",
-            "Prediction Markets (Polymarket CLOB / EVM)",
-            "AI-Powered Workflow Automation",
-            "Full-Stack Tools & Autonomous Bots"
-        ]
-        self.current_focus = "Autonomous execution engines & Web3 quantitative liquidity"
+> **"I engineer high-performance algorithmic trading systems, prediction market engines, and autonomous software designed to run 24/7."**
 
-    def contact(self):
-        return "riccardoma07@gmail.com"
-```
+I’m a developer and builder focused on quantitative market making, decentralized financial architecture, and autonomous backend pipelines. I specialize in designing systems where execution speed, delta-neutral risk management, and uptime are non-negotiable.
+
+* 📈 **Quant & Trading:** Automated market making, delta-neutral arbitrage, and orderbook micro-structure (Polymarket CLOB, Polygon / EVM).
+* ⚙️ **Autonomous Architecture:** Event-driven Python engines (asyncio / WebSockets), sub-second execution loops, and real-time remote telemetry.
+* 🚀 **Mindset:** Ship fast, eliminate manual friction, and build scalable systems that generate real-world value.
+
+---
+
+### 🌟 Featured Engineering
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3 align="center">🦅 PolyMarket_bot</h3>
+      <p align="center">
+        <img src="https://img.shields.io/badge/Status-Active%20Production-00FF88?style=flat-square" alt="Status" />
+        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20Web3%20%7C%20CLOB-00C7FF?style=flat-square" alt="Stack" />
+      </p>
+      <p>High-frequency market making and delta-neutral liquidity engine for Polymarket. Features real-time CLOB orderbook streaming, automatic merge arbitrage, dynamic spread re-quoting, and full Telegram control.</p>
+      <p align="center">
+        <a href="https://github.com/themeig/PolyMarket_bot"><b>Explore Codebase →</b></a>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <h3 align="center">⚡ Klippify-Automation-Engine</h3>
+      <p align="center">
+        <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status" />
+        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20Pipelines-blueviolet?style=flat-square" alt="Stack" />
+      </p>
+      <p>High-throughput automated content pipeline for processing, transformation, and distribution workflows. Built for hands-off execution and scaling media assets.</p>
+      <p align="center">
+        <a href="https://github.com/themeig/Klippify-Automation-Engine"><b>Explore Codebase →</b></a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">
+      <h3 align="center">🤖 AI.CoFounder</h3>
+      <p align="center">
+        <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square" alt="Status" />
+        <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20AI%20Agents-3178C6?style=flat-square" alt="Stack" />
+      </p>
+      <p align="center">AI-driven strategic co-pilot and automated decision assistant designed for modern founders and fast-moving technical ventures.</p>
+      <p align="center">
+        <a href="https://github.com/themeig/AI.CoFounder"><b>Explore Codebase →</b></a>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -51,13 +84,13 @@ class Developer:
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Bash/Shell](https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![Bash](https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
 #### **Web3, Quantitative & Data**
 ![Web3.py](https://img.shields.io/badge/Web3.py-F16822?style=for-the-badge&logo=ethereum&logoColor=white)
 ![Polygon](https://img.shields.io/badge/Polygon-7B3FE4?style=for-the-badge&logo=polygon&logoColor=white)
 ![EVM](https://img.shields.io/badge/EVM_Chains-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white)
-![Asyncio / WebSockets](https://img.shields.io/badge/AsyncIO%20%2F%20WS-00599C?style=for-the-badge)
+![Asyncio / WebSockets](https://img.shields.io/badge/AsyncIO%20%2F%20WebSockets-00599C?style=for-the-badge)
 
 #### **Frameworks, Automation & DevOps**
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
@@ -65,49 +98,34 @@ class Developer:
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Telegram Bot API](https://img.shields.io/badge/Telegram_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
-![Linux / Termux](https://img.shields.io/badge/Linux%20%2F%20Termux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Linux](https://img.shields.io/badge/Linux%20%2F%20Termux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
 </div>
 
 ---
 
-### 🌟 Featured Projects
-
-| Project | Description | Tech Stack | Status |
-| :--- | :--- | :--- | :---: |
-| 🦅 **[PolyMarket_bot](https://github.com/themeig/PolyMarket_bot)** | High-Frequency Market Maker, delta-neutral hedging & liquidity rewards bot on Polymarket CLOB. | `Python` `Web3` `CLOB API` `AsyncIO` | 🟢 Active |
-| ⚡ **[Klippify-Automation-Engine](https://github.com/themeig/Klippify-Automation-Engine)** | Autonomous content ingestion, processing, and distribution engine for digital workflows. | `Python` `Automation` `Pipelines` | 🚀 Active |
-| 🤖 **[AI.CoFounder](https://github.com/themeig/AI.CoFounder)** | AI-driven assistant and decision co-pilot for startups and autonomous product scaling. | `TypeScript` `AI` `LLM APIs` | 🛠️ In Dev |
-
----
-
-### 📊 GitHub Analytics
+### 📊 GitHub Activity & Streak
 
 <div align="center">
 
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=themeig&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=themeig&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
-
-  <br><br>
-
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=themeig&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=themeig&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 
 </div>
 
 ---
 
-### 💬 Connect With Me
+### 💬 Connect & Collaborate
 
 <div align="center">
 
   <a href="https://github.com/themeig">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  <a href="mailto:riccardoma07@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
   <a href="https://t.me/rikmillo">
     <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" />
+  </a>
+  <a href="mailto:riccardoma07@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 
 </div>
@@ -115,5 +133,6 @@ class Developer:
 <br>
 
 <div align="center">
-  <sub>⭐️ Designed with precision for <b>@themeig</b> • Constantly building and innovating</sub>
+  <!-- Waving Footer Banner -->
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F2FE,50:111827,100:0B0F19&height=100&section=footer" width="100%" alt="Footer Banner" />
 </div>
