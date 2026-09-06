@@ -1,11 +1,11 @@
 <div align="center">
 
   <!-- Waving Header Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0F19,50:111827,100:00F2FE&height=220&section=header&text=%20%E2%80%A2%20themeig&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Algorithmic%20Trading%20%E2%80%A2%20Web3%20%E2%80%A2%20Autonomous%20Engines&descAlignY=58&descAlign=50" width="100%" alt="Header Banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0F19,50:111827,100:00F2FE&height=220&section=header&text=themeig&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Algorithmic%20Trading%20%E2%80%A2%20Web3%20%E2%80%A2%20Autonomous%20Engines&descAlignY=58&descAlign=50" width="100%" alt="Header Banner" />
 
   <!-- Multi-line Dynamic Typing Animation -->
   <a href="https://github.com/themeig">
-    <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=23&duration=2500&pause=1200&color=00F2FE&center=true&vCenter=true&multiline=true&width=700&height=80&lines=Welcome+to+my+github" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=23&duration=2500&pause=1200&color=00F2FE&center=true&vCenter=true&width=700&height=50&lines=Welcome+to+my+GitHub+profile!;Hi+there!+%F0%9F%91%8B;Building+high-performance+systems+%26+quant+bots" alt="Typing SVG" />
   </a>
 
   <!-- Quick Badges -->
