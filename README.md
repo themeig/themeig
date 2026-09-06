@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Waving Header Banner -->
-  <img src="./assets/header_shooting_star.svg" width="100%" alt="Day Night Cycle Banner" />
+  <img src="./assets/header_particles_star.svg" width="100%" alt="Day Night Cycle Banner" />
 
   <!-- Multi-line Dynamic Typing Animation -->
   <a href="https://github.com/themeig">

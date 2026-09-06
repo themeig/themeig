@@ -159,7 +159,7 @@
     }
 
     /* ========================================================================= */
-    /* USER EXACT SHOOTING STAR (COMET + HEAD + TRAIL DISSIPATE + FLY)           */
+    /* USER EXACT SHOOTING STAR + DETACHING DEBRIS PARTICLES (6s FLY, HEAD, TRAIL) */
     /* ========================================================================= */
 
     /* Ruota testa+scia in modo che la scia punti indietro (alto-destra a -45deg) */
@@ -192,16 +192,27 @@
       }
     }
 
-    /* La testa scompare poco dopo l'inizio della dissolvenza della scia */
+    /* La testa rimpicciolisce e scompare secondo il codice fornito dall'utente */
     @keyframes userHeadFade {
       0%, 57.9% {
         opacity: 0;
+        transform: scale(1);
       }
-      58.0%, 77.5% {
+      58.0% {
         opacity: 1;
+        transform: scale(1);
       }
-      83.5%, 100% {
+      77.5% {
+        opacity: 1;
+        transform: scale(0.85);
+      }
+      83.5% {
         opacity: 0;
+        transform: scale(0.35);
+      }
+      88.0%, 100% {
+        opacity: 0;
+        transform: scale(0.35);
       }
     }
 
@@ -234,12 +245,197 @@
     }
 
     .user-head {
+      transform-origin: 0px 0px;
       animation: userHeadFade 20s linear infinite;
     }
 
     .user-trail {
       transform-origin: 0px 0px;
       animation: userTrailDissipate 20s linear infinite;
+    }
+
+    /* ========================================================================= */
+    /* PARTICELLE DI DETRITO EMESSE DALLA TESTA LUNGO LA TRAIETTORIA            */
+    /* ========================================================================= */
+    
+    @keyframes pFade0 {
+      0%, 59.5% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      59.8% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      63.5%, 100% { opacity: 0; transform: translate(3.9px, 8.4px) scale(0.2); }
+    }
+    .particle-0 {
+      transform-origin: 696.4px 33.6px;
+      animation: pFade0 20s ease-out infinite;
+    }
+
+    @keyframes pFade1 {
+      0%, 60.8% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      61.1% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      64.8%, 100% { opacity: 0; transform: translate(-7.8px, 18.3px) scale(0.2); }
+    }
+    .particle-1 {
+      transform-origin: 684.3px 45.7px;
+      animation: pFade1 20s ease-out infinite;
+    }
+
+    @keyframes pFade2 {
+      0%, 62.2% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      62.5% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      66.2%, 100% { opacity: 0; transform: translate(11.0px, 9.2px) scale(0.2); }
+    }
+    .particle-2 {
+      transform-origin: 672.2px 57.8px;
+      animation: pFade2 20s ease-out infinite;
+    }
+
+    @keyframes pFade3 {
+      0%, 63.5% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      63.8% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      67.5%, 100% { opacity: 0; transform: translate(-13.2px, 11.1px) scale(0.2); }
+    }
+    .particle-3 {
+      transform-origin: 660.0px 70.0px;
+      animation: pFade3 20s ease-out infinite;
+    }
+
+    @keyframes pFade4 {
+      0%, 64.9% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      65.2% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      68.9%, 100% { opacity: 0; transform: translate(-13.3px, 10.8px) scale(0.2); }
+    }
+    .particle-4 {
+      transform-origin: 647.9px 82.1px;
+      animation: pFade4 20s ease-out infinite;
+    }
+
+    @keyframes pFade5 {
+      0%, 66.2% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      66.5% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      70.2%, 100% { opacity: 0; transform: translate(1.3px, 11.1px) scale(0.2); }
+    }
+    .particle-5 {
+      transform-origin: 635.8px 94.2px;
+      animation: pFade5 20s ease-out infinite;
+    }
+
+    @keyframes pFade6 {
+      0%, 67.5% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      67.8% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      71.5%, 100% { opacity: 0; transform: translate(8.7px, 8.1px) scale(0.2); }
+    }
+    .particle-6 {
+      transform-origin: 623.6px 106.4px;
+      animation: pFade6 20s ease-out infinite;
+    }
+
+    @keyframes pFade7 {
+      0%, 68.9% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      69.2% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      72.9%, 100% { opacity: 0; transform: translate(5.5px, 12.8px) scale(0.2); }
+    }
+    .particle-7 {
+      transform-origin: 611.5px 118.5px;
+      animation: pFade7 20s ease-out infinite;
+    }
+
+    @keyframes pFade8 {
+      0%, 70.2% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      70.5% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      74.2%, 100% { opacity: 0; transform: translate(12.8px, 12.7px) scale(0.2); }
+    }
+    .particle-8 {
+      transform-origin: 599.4px 130.6px;
+      animation: pFade8 20s ease-out infinite;
+    }
+
+    @keyframes pFade9 {
+      0%, 71.6% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      71.9% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      75.6%, 100% { opacity: 0; transform: translate(-11.3px, 19.9px) scale(0.2); }
+    }
+    .particle-9 {
+      transform-origin: 587.2px 142.8px;
+      animation: pFade9 20s ease-out infinite;
+    }
+
+    @keyframes pFade10 {
+      0%, 72.9% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      73.2% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      76.9%, 100% { opacity: 0; transform: translate(8.6px, 18.2px) scale(0.2); }
+    }
+    .particle-10 {
+      transform-origin: 575.1px 154.9px;
+      animation: pFade10 20s ease-out infinite;
+    }
+
+    @keyframes pFade11 {
+      0%, 74.3% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      74.6% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      78.3%, 100% { opacity: 0; transform: translate(13.2px, 13.3px) scale(0.2); }
+    }
+    .particle-11 {
+      transform-origin: 562.9px 167.1px;
+      animation: pFade11 20s ease-out infinite;
+    }
+
+    @keyframes pFade12 {
+      0%, 75.6% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      75.9% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      79.6%, 100% { opacity: 0; transform: translate(9.2px, 16.7px) scale(0.2); }
+    }
+    .particle-12 {
+      transform-origin: 550.8px 179.2px;
+      animation: pFade12 20s ease-out infinite;
+    }
+
+    @keyframes pFade13 {
+      0%, 76.9% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      77.2% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      80.9%, 100% { opacity: 0; transform: translate(2.2px, 17.9px) scale(0.2); }
+    }
+    .particle-13 {
+      transform-origin: 538.7px 191.3px;
+      animation: pFade13 20s ease-out infinite;
+    }
+
+    @keyframes pFade14 {
+      0%, 78.3% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      78.6% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      82.3%, 100% { opacity: 0; transform: translate(-7.6px, 12.1px) scale(0.2); }
+    }
+    .particle-14 {
+      transform-origin: 526.5px 203.5px;
+      animation: pFade14 20s ease-out infinite;
+    }
+
+    @keyframes pFade15 {
+      0%, 79.6% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      79.9% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      83.6%, 100% { opacity: 0; transform: translate(-7.5px, 9.4px) scale(0.2); }
+    }
+    .particle-15 {
+      transform-origin: 514.1px 215.9px;
+      animation: pFade15 20s ease-out infinite;
+    }
+
+    @keyframes pFade16 {
+      0%, 81.0% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      81.3% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      85.0%, 100% { opacity: 0; transform: translate(3.8px, 13.1px) scale(0.2); }
+    }
+    .particle-16 {
+      transform-origin: 501.1px 228.9px;
+      animation: pFade16 20s ease-out infinite;
+    }
+
+    @keyframes pFade17 {
+      0%, 82.3% { opacity: 0; transform: translate(0, 0) scale(0.3); }
+      82.6% { opacity: 0.95; transform: translate(0, 0) scale(1); }
+      86.3%, 100% { opacity: 0; transform: translate(-8.1px, 11.7px) scale(0.2); }
+    }
+    .particle-17 {
+      transform-origin: 488.2px 241.8px;
+      animation: pFade17 20s ease-out infinite;
     }
   ]]>
   </style>
@@ -267,14 +463,36 @@
     <circle cx="620" cy="115" r="1.3" fill="#ffffff" class="twinkle-slow" />
   </g>
 
+  <!-- Particelle di detrito che si staccano dalla stella e cadono -->
+  <g class="debris-particles">
+    <circle cx="696.4" cy="33.6" r="1.3" fill="#ffffff" class="particle-0" />
+    <circle cx="684.3" cy="45.7" r="1.65" fill="#ffffff" class="particle-1" />
+    <circle cx="672.2" cy="57.8" r="1.45" fill="#ffffff" class="particle-2" />
+    <circle cx="660.0" cy="70.0" r="1.5" fill="#ffffff" class="particle-3" />
+    <circle cx="647.9" cy="82.1" r="1.6" fill="#ffffff" class="particle-4" />
+    <circle cx="635.8" cy="94.2" r="1.55" fill="#ffffff" class="particle-5" />
+    <circle cx="623.6" cy="106.4" r="1.75" fill="#ffffff" class="particle-6" />
+    <circle cx="611.5" cy="118.5" r="1.2" fill="#ffffff" class="particle-7" />
+    <circle cx="599.4" cy="130.6" r="1.15" fill="#ffffff" class="particle-8" />
+    <circle cx="587.2" cy="142.8" r="1.6" fill="#ffffff" class="particle-9" />
+    <circle cx="575.1" cy="154.9" r="1.55" fill="#ffffff" class="particle-10" />
+    <circle cx="562.9" cy="167.1" r="1.55" fill="#ffffff" class="particle-11" />
+    <circle cx="550.8" cy="179.2" r="1.8" fill="#ffffff" class="particle-12" />
+    <circle cx="538.7" cy="191.3" r="1.15" fill="#ffffff" class="particle-13" />
+    <circle cx="526.5" cy="203.5" r="1.15" fill="#ffffff" class="particle-14" />
+    <circle cx="514.1" cy="215.9" r="1.3" fill="#ffffff" class="particle-15" />
+    <circle cx="501.1" cy="228.9" r="1.4" fill="#ffffff" class="particle-16" />
+    <circle cx="488.2" cy="241.8" r="1.85" fill="#ffffff" class="particle-17" />
+  </g>
+
   <!-- ========================================================================= -->
-  <!-- USER SHOOTING STAR IN THE NIGHT SKY (EXACT PROTOTYPE FROM USER)           -->
+  <!-- USER SHOOTING STAR (Comet: Head + Dissipating Trail)                      -->
   <!-- ========================================================================= -->
   <g class="user-shooting-star">
     <g class="user-comet">
       <!-- Trail: 140px width, 2px height, linear-gradient to right -->
       <rect class="user-trail" x="0" y="-1" width="140" height="2" fill="url(#userTrailGrad)" />
-      <!-- Head: 6px diameter (r=3), white, dual luminous glow -->
+      <!-- Head: 6px diameter (r=3), white, dual luminous glow, scaling down -->
       <g class="user-head">
         <circle cx="0" cy="0" r="3" fill="#ffffff" filter="url(#userHeadGlow)" />
         <circle cx="0" cy="0" r="3" fill="#ffffff" />
