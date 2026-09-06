@@ -1,0 +1,352 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="100%" height="280">
+  <defs>
+    <!-- Sky Gradients for Day/Night Cycle -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" class="sky-top" />
+      <stop offset="55%" class="sky-mid" />
+      <stop offset="100%" class="sky-bot" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="moonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Vapor Contrail Gradients (Soft Atmospheric Smoke Trail) -->
+    <linearGradient id="contrailMist" x1="720" y1="25" x2="200" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="20%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="60%" stop-color="#bae6fd" stop-opacity="0.85" />
+      <stop offset="90%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+    </linearGradient>
+
+    <linearGradient id="contrailDiffuse" x1="720" y1="25" x2="200" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0" />
+      <stop offset="35%" stop-color="#38bdf8" stop-opacity="0.35" />
+      <stop offset="70%" stop-color="#a7f3d0" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Plasma Flash Beam Gradient -->
+    <linearGradient id="plasmaBeam" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="15%" stop-color="#bae6fd" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <style>
+  <![CDATA[
+    /* Dynamic color transitions for the sky (20s synchronized cycle) */
+    @keyframes skyTopColor {
+      0%, 100% { stop-color: #1f1d36; }
+      18% { stop-color: #0369a1; }
+      35% { stop-color: #0284c7; }
+      50% { stop-color: #311432; }
+      65% { stop-color: #0b0f19; }
+      85% { stop-color: #030712; }
+    }
+    @keyframes skyMidColor {
+      0%, 100% { stop-color: #7c3aed; }
+      18% { stop-color: #38bdf8; }
+      35% { stop-color: #7dd3fc; }
+      50% { stop-color: #be123c; }
+      65% { stop-color: #1e1b4b; }
+      85% { stop-color: #0f172a; }
+    }
+    @keyframes skyBotColor {
+      0%, 100% { stop-color: #f97316; }
+      18% { stop-color: #bae6fd; }
+      35% { stop-color: #e0f2fe; }
+      50% { stop-color: #fbbf24; }
+      65% { stop-color: #312e81; }
+      85% { stop-color: #1e293b; }
+    }
+
+    .sky-top { animation: skyTopColor 20s ease-in-out infinite; }
+    .sky-mid { animation: skyMidColor 20s ease-in-out infinite; }
+    .sky-bot { animation: skyBotColor 20s ease-in-out infinite; }
+
+    /* Sun Orbit Animation */
+    @keyframes sunOrbit {
+      0% {
+        transform: translate(60px, 240px) scale(0.8);
+        opacity: 0;
+      }
+      5% {
+        opacity: 0.95;
+      }
+      20% {
+        transform: translate(450px, 45px) scale(1.15);
+        opacity: 1;
+      }
+      40% {
+        transform: translate(840px, 240px) scale(0.9);
+        opacity: 0.95;
+      }
+      45%, 100% {
+        transform: translate(860px, 320px) scale(0.7);
+        opacity: 0;
+      }
+    }
+
+    /* Moon Orbit Animation */
+    @keyframes moonOrbit {
+      0%, 50% {
+        transform: translate(60px, 320px) scale(0.6);
+        opacity: 0;
+      }
+      55% {
+        opacity: 0.9;
+      }
+      75% {
+        transform: translate(450px, 50px) scale(1.05);
+        opacity: 1;
+      }
+      95% {
+        transform: translate(840px, 240px) scale(0.85);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translate(860px, 320px) scale(0.7);
+        opacity: 0;
+      }
+    }
+
+    /* Stars Field Animation */
+    @keyframes starFade {
+      0%, 45% { opacity: 0; }
+      55%, 90% { opacity: 0.95; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .sun-group {
+      animation: sunOrbit 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .moon-group {
+      animation: moonOrbit 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .stars-field {
+      animation: starFade 20s ease-in-out infinite;
+    }
+
+    .twinkle-fast { animation: starTwinkle 1.8s ease-in-out infinite; }
+    .twinkle-slow { animation: starTwinkle 3.2s ease-in-out infinite; }
+
+    /* Sun rays continuous rotation */
+    @keyframes rayRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .sun-rays {
+      transform-origin: 0 0;
+      animation: rayRotate 16s linear infinite;
+    }
+
+    /* ========================================================================= */
+    /* ULTRA-RELIABLE GPU CONTRAIL ANIMATION (100% SUPPORTED IN ALL BROWSERS)   */
+    /* ========================================================================= */
+
+    /* 1. Fast Plasma Streak flashes across from top-right to bottom-left */
+    @keyframes streakFlight1 {
+      0%, 62.8% {
+        transform: translate(740px, 20px) rotate(166deg);
+        opacity: 0;
+      }
+      63.0% {
+        opacity: 1;
+      }
+      64.2% {
+        transform: translate(190px, 155px) rotate(166deg);
+        opacity: 1;
+      }
+      64.8% {
+        transform: translate(160px, 162px) rotate(166deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(160px, 162px) rotate(166deg);
+        opacity: 0;
+      }
+    }
+
+    /* 2. Lingering Vapor Contrail (Hangs in the sky, expands & evaporates) */
+    @keyframes contrailLingering {
+      0%, 63.0% {
+        opacity: 0;
+        transform: scaleY(0.4);
+      }
+      /* Appears as the streak passes through */
+      63.8% {
+        opacity: 0.95;
+        transform: scaleY(1.0);
+      }
+      /* Lingers like a bright airplane vapor trail */
+      65.5% {
+        opacity: 0.8;
+        transform: scaleY(1.4);
+      }
+      /* Softly diffuses and widens into atmospheric mist */
+      67.5% {
+        opacity: 0.45;
+        transform: scaleY(2.0);
+      }
+      /* Slowly dissolves into the night sky */
+      69.8% {
+        opacity: 0.1;
+        transform: scaleY(2.6);
+      }
+      70.5%, 100% {
+        opacity: 0;
+        transform: scaleY(3.0);
+      }
+    }
+
+    /* 3. Stardust Sparks drifting & fading in the wake */
+    @keyframes sparksDrift1 {
+      0%, 63.3% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+      63.8% { opacity: 1; transform: translate(-1px, 2px) scale(1.3); }
+      66.0% { opacity: 0.7; transform: translate(-4px, 6px) scale(0.9); }
+      68.5% { opacity: 0; transform: translate(-8px, 12px) scale(0.2); }
+      100% { opacity: 0; }
+    }
+
+    @keyframes sparksDrift2 {
+      0%, 63.6% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+      64.1% { opacity: 1; transform: translate(2px, 2px) scale(1.4); }
+      66.5% { opacity: 0.6; transform: translate(4px, 7px) scale(1.0); }
+      69.0% { opacity: 0; transform: translate(7px, 13px) scale(0.2); }
+      100% { opacity: 0; }
+    }
+
+    @keyframes sparksDrift3 {
+      0%, 63.9% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+      64.4% { opacity: 1; transform: translate(-2px, 3px) scale(1.5); }
+      67.0% { opacity: 0.7; transform: translate(-5px, 8px) scale(0.9); }
+      69.5% { opacity: 0; transform: translate(-9px, 14px) scale(0.2); }
+      100% { opacity: 0; }
+    }
+
+    .fast-plasma-streak {
+      animation: streakFlight1 20s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+
+    .lingering-vapor-contrail {
+      transform-origin: 460px 88px;
+      animation: contrailLingering 20s ease-out infinite;
+    }
+
+    .spark-p1 { animation: sparksDrift1 20s ease-out infinite; }
+    .spark-p2 { animation: sparksDrift2 20s ease-out infinite; }
+    .spark-p3 { animation: sparksDrift3 20s ease-out infinite; }
+  ]]>
+  </style>
+
+  <!-- Sky Background -->
+  <rect width="900" height="280" rx="16" fill="url(#skyGradient)" />
+
+  <!-- Stars Layer -->
+  <g class="stars-field">
+    <circle cx="120" cy="45" r="1.6" fill="#ffffff" class="twinkle-fast" />
+    <circle cx="180" cy="90" r="2.0" fill="#93c5fd" class="twinkle-slow" />
+    <circle cx="240" cy="35" r="1.4" fill="#ffffff" class="twinkle-fast" />
+    <circle cx="310" cy="80" r="2.2" fill="#ffffff" class="twinkle-slow" />
+    <circle cx="380" cy="40" r="1.5" fill="#93c5fd" class="twinkle-fast" />
+    <circle cx="520" cy="50" r="1.9" fill="#ffffff" class="twinkle-slow" />
+    <circle cx="580" cy="85" r="1.6" fill="#ffffff" class="twinkle-fast" />
+    <circle cx="660" cy="35" r="2.4" fill="#93c5fd" class="twinkle-slow" />
+    <circle cx="730" cy="75" r="1.7" fill="#ffffff" class="twinkle-fast" />
+    <circle cx="800" cy="45" r="2.0" fill="#ffffff" class="twinkle-slow" />
+    <circle cx="850" cy="110" r="1.5" fill="#93c5fd" class="twinkle-fast" />
+    <circle cx="150" cy="130" r="1.7" fill="#ffffff" class="twinkle-slow" />
+    <circle cx="710" cy="120" r="1.4" fill="#ffffff" class="twinkle-fast" />
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- AUTHENTIC VAPOR CONTRAIL & METEOR FLASH (AIRPLANE CONTRAIL DISSOLVE)  -->
+  <!-- ===================================================================== -->
+
+  <!-- A. Lingering Vapor Trail: Remains in the sky, diffuses and evaporates -->
+  <g class="lingering-vapor-contrail">
+    <!-- Diffuse outer smoke ribbon -->
+    <path d="M720,25 L200,150" stroke="url(#contrailDiffuse)" stroke-width="8" stroke-linecap="round" />
+    <!-- Core dense vapor ribbon -->
+    <path d="M720,25 L200,150" stroke="url(#contrailMist)" stroke-width="4" stroke-linecap="round" />
+    <!-- Center glowing ionization line -->
+    <path d="M720,25 L200,150" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity="0.9" />
+
+    <!-- Dispersed Stardust Embers along the vapor wake -->
+    <circle cx="610" cy="52" r="1.8" fill="#ffffff" class="spark-p1" />
+    <circle cx="590" cy="60" r="1.2" fill="#7dd3fc" class="spark-p1" />
+    <circle cx="570" cy="56" r="1.5" fill="#ffffff" class="spark-p2" />
+    <circle cx="490" cy="82" r="2.0" fill="#ffffff" class="spark-p2" />
+    <circle cx="465" cy="91" r="1.3" fill="#a7f3d0" class="spark-p2" />
+    <circle cx="440" cy="85" r="1.6" fill="#7dd3fc" class="spark-p3" />
+    <circle cx="350" cy="112" r="2.2" fill="#ffffff" class="spark-p3" />
+    <circle cx="330" cy="122" r="1.4" fill="#38bdf8" class="spark-p3" />
+    <circle cx="295" cy="126" r="1.8" fill="#ffffff" class="spark-p3" />
+  </g>
+
+  <!-- B. The Fast Meteor Flash: Slices across the sky leaving the contrail behind -->
+  <g class="fast-plasma-streak">
+    <!-- Formless Tapered Plasma Tail -->
+    <polygon points="0,0 160,-6 180,-2 0,0" fill="url(#plasmaBeam)" opacity="0.9" />
+    <line x1="0" y1="0" x2="190" y2="0" stroke="url(#plasmaBeam)" stroke-width="2.5" stroke-linecap="round" />
+    <!-- Bright Leading Flash -->
+    <circle cx="0" cy="0" r="4" fill="#ffffff" />
+    <circle cx="0" cy="0" r="8" fill="#38bdf8" opacity="0.5" />
+  </g>
+
+  <!-- Animated Sun Group -->
+  <g class="sun-group" filter="url(#glow)">
+    <g class="sun-rays">
+      <circle cx="0" cy="0" r="38" fill="#fef08a" opacity="0.25" />
+      <polygon points="0,-46 7,-32 30,-30 32,-7 46,0 32,7 30,30 7,32 0,46 -7,32 -30,30 -32,7 -46,0 -32,-7 -30,-30 -7,-32" fill="#fde047" opacity="0.4" />
+    </g>
+    <circle cx="0" cy="0" r="26" fill="#fef9c3" />
+    <circle cx="0" cy="0" r="22" fill="#facc15" />
+    <circle cx="0" cy="0" r="17" fill="#fef08a" />
+  </g>
+
+  <!-- Animated Moon Group -->
+  <g class="moon-group" filter="url(#moonGlow)">
+    <circle cx="0" cy="0" r="20" fill="#f8fafc" />
+    <circle cx="7" cy="-5" r="17" fill="#0f172a" opacity="0.88" />
+  </g>
+
+  <!-- Landscape Mountains and Waves Silhouettes -->
+  <g opacity="0.95">
+    <path d="M0,280 L0,195 Q140,150 280,190 T560,185 Q720,145 900,190 L900,280 Z" fill="#1e1b4b" opacity="0.5" />
+    <path d="M0,280 L0,215 Q180,175 380,210 Q600,165 900,215 L900,280 Z" fill="#0f172a" opacity="0.8" />
+    <path d="M0,280 L0,238 Q220,205 450,235 T900,228 L900,280 Z" fill="#080c14" />
+  </g>
+
+  <!-- Clean Title Overlay -->
+  <text x="50%" y="254" text-anchor="middle" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="4">
+    THEMEIG
+  </text>
+  <text x="50%" y="271" text-anchor="middle" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="10" font-weight="500" fill="#94a3b8" letter-spacing="2">
+    SOFTWARE ENGINEERING • AUTOMATION &amp; SYSTEMS
+  </text>
+</svg>

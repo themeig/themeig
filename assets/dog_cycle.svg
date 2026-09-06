@@ -1,0 +1,284 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="100%" height="220">
+  <defs>
+    <!-- Synchronized Sky Gradient -->
+    <linearGradient id="footerSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" class="sky-top" />
+      <stop offset="60%" class="sky-mid" />
+      <stop offset="100%" class="sky-bot" />
+    </linearGradient>
+
+    <!-- Warm Hill Gradient -->
+    <linearGradient id="hillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+  </defs>
+
+  <style>
+  <![CDATA[
+    /* Synchronized 20s Sky Cycle matching Header */
+    @keyframes skyTopColor {
+      0%, 100% { stop-color: #1f1d36; }
+      18% { stop-color: #0369a1; }
+      35% { stop-color: #0284c7; }
+      50% { stop-color: #311432; }
+      65% { stop-color: #0b0f19; }
+      85% { stop-color: #030712; }
+    }
+    @keyframes skyMidColor {
+      0%, 100% { stop-color: #7c3aed; }
+      18% { stop-color: #38bdf8; }
+      35% { stop-color: #7dd3fc; }
+      50% { stop-color: #be123c; }
+      65% { stop-color: #1e1b4b; }
+      85% { stop-color: #0f172a; }
+    }
+    @keyframes skyBotColor {
+      0%, 100% { stop-color: #f97316; }
+      18% { stop-color: #bae6fd; }
+      35% { stop-color: #e0f2fe; }
+      50% { stop-color: #fbbf24; }
+      65% { stop-color: #312e81; }
+      85% { stop-color: #1e293b; }
+    }
+
+    .sky-top { animation: skyTopColor 20s ease-in-out infinite; }
+    .sky-mid { animation: skyMidColor 20s ease-in-out infinite; }
+    .sky-bot { animation: skyBotColor 20s ease-in-out infinite; }
+
+    /* Stars Fade In at Night */
+    @keyframes nightStars {
+      0%, 48% { opacity: 0; }
+      56%, 90% { opacity: 0.85; }
+      98%, 100% { opacity: 0; }
+    }
+    .footer-stars { animation: nightStars 20s ease-in-out infinite; }
+
+    @keyframes starPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    .twinkle { animation: starPulse 2.4s ease-in-out infinite; }
+
+    /* ========================================================== */
+    /* UNIFIED DOG SKELETON: CONTINUOUS ORGANIC MOTION (NO CUTS!)  */
+    /* ========================================================== */
+
+    /* 1. Torso Spine: Smoothly rises from lying flat to sitting upright */
+    @keyframes spineMotion {
+      0%, 45% {
+        /* Sleeping: lying down flat */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      /* Gradual wake-up: body rotates upward smoothly */
+      53% {
+        /* Upright sitting posture */
+        transform: translate(-4px, -18px) rotate(-46deg);
+      }
+      54%, 88% {
+        /* Howling at the moon: rhythmic chest expansion */
+        transform: translate(-4px, -18px) rotate(-46deg);
+      }
+      /* Gradual settle down: body gently lowers back to the hill */
+      95%, 100% {
+        /* Curled back into deep sleep */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+    }
+
+    /* 2. Head & Neck: Smoothly raises from ground level to skyward howl */
+    @keyframes headMotion {
+      0%, 45% {
+        /* Resting peacefully near ground */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      /* Stirs and raises head smoothly into the air */
+      53% {
+        /* Head raised up high, tilted 35deg toward the moon */
+        transform: translate(14px, -52px) rotate(32deg);
+      }
+      55%, 88% {
+        /* Singing/howling motion: subtle rhythmic vibration */
+        transform: translate(14px, -52px) rotate(32deg);
+      }
+      /* Smoothly lowers head back down to paws */
+      95%, 100% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+    }
+
+    /* 3. Subtle Breathing Motion while sleeping (chest gently rises/falls) */
+    @keyframes gentleBreathing {
+      0%, 100% { transform: scale(1, 1); }
+      50% { transform: scale(1.02, 1.04); }
+    }
+    .sleeping-breath {
+      transform-origin: 450px 165px;
+      animation: gentleBreathing 3.2s ease-in-out infinite;
+    }
+
+    /* 4. Tail: Lying curled during day, wagging happily upright at night */
+    @keyframes tailMotion {
+      0%, 45% {
+        /* Curled against hip, gentle tail-tip flick */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      53% {
+        /* Raises upright */
+        transform: translate(3px, -10px) rotate(42deg);
+      }
+      55%, 88% {
+        /* Wagging happily in the night air */
+        transform: translate(3px, -10px) rotate(52deg);
+      }
+      95%, 100% {
+        /* Lowers gently back */
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+    }
+
+    @keyframes tailWagNight {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(14deg); }
+    }
+
+    /* 5. Snout Mouth Open during Howl */
+    @keyframes mouthHowl {
+      0%, 48% { opacity: 0; }
+      53%, 89% { opacity: 1; }
+      94%, 100% { opacity: 0; }
+    }
+
+    /* 6. Sound Waves: Expand outward only while howling at night */
+    @keyframes soundRings {
+      0% { opacity: 0; transform: scale(0.4); }
+      35% { opacity: 0.65; }
+      100% { opacity: 0; transform: scale(1.8); }
+    }
+    .howl-wave-1 {
+      transform-origin: 428px 96px;
+      animation: soundRings 2.4s ease-out infinite;
+    }
+    .howl-wave-2 {
+      transform-origin: 428px 96px;
+      animation: soundRings 2.4s ease-out 1.2s infinite;
+    }
+
+    @keyframes wavesVisibility {
+      0%, 52% { opacity: 0; }
+      55%, 88% { opacity: 1; }
+      92%, 100% { opacity: 0; }
+    }
+    .sound-waves-group {
+      animation: wavesVisibility 20s ease-in-out infinite;
+    }
+
+    .dog-spine {
+      transform-origin: 462px 165px;
+      animation: spineMotion 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .dog-head {
+      transform-origin: 436px 156px;
+      animation: headMotion 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .dog-tail {
+      transform-origin: 474px 158px;
+      animation: tailMotion 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .dog-tail-wag {
+      transform-origin: 474px 158px;
+      animation: tailWagNight 1.8s ease-in-out infinite;
+    }
+
+    .mouth-open {
+      animation: mouthHowl 20s ease-in-out infinite;
+    }
+  ]]>
+  </style>
+
+  <!-- Background Sky -->
+  <rect width="900" height="220" rx="16" fill="url(#footerSky)" />
+
+  <!-- Stars during Night -->
+  <g class="footer-stars">
+    <circle cx="100" cy="40" r="1.5" fill="#ffffff" class="twinkle" />
+    <circle cx="210" cy="70" r="1.8" fill="#93c5fd" />
+    <circle cx="340" cy="35" r="1.3" fill="#ffffff" class="twinkle" />
+    <circle cx="560" cy="50" r="1.6" fill="#ffffff" />
+    <circle cx="680" cy="30" r="2.0" fill="#93c5fd" class="twinkle" />
+    <circle cx="790" cy="65" r="1.4" fill="#ffffff" />
+    <circle cx="840" cy="35" r="1.7" fill="#ffffff" class="twinkle" />
+    <circle cx="280" cy="90" r="1.2" fill="#ffffff" />
+    <circle cx="620" cy="80" r="1.4" fill="#93c5fd" class="twinkle" />
+  </g>
+
+  <!-- Ground / Cozy Hill Horizon -->
+  <path d="M0,220 L0,175 Q200,150 450,152 T900,170 L900,220 Z" fill="url(#hillGrad)" />
+  <path d="M0,220 L0,185 Q250,165 520,168 T900,180 L900,220 Z" fill="#06090e" opacity="0.9" />
+
+  <!-- Acoustic Howl Waves (Subtle expanding rings, active during night howl) -->
+  <g class="sound-waves-group">
+    <circle cx="428" cy="96" r="16" stroke="#38bdf8" stroke-width="1.8" fill="none" class="howl-wave-1" />
+    <circle cx="428" cy="96" r="28" stroke="#818cf8" stroke-width="1.4" fill="none" class="howl-wave-2" />
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- SINGLE ORGANIC DOG: CONTINUOUS ANATOMICAL ANIMATION (ZERO CUTS) -->
+  <!-- ============================================================== -->
+  <g id="organicDog">
+    <!-- Ground Shadow (expands/contracts naturally) -->
+    <ellipse cx="452" cy="173" rx="38" ry="8" fill="#04060a" opacity="0.65" />
+
+    <!-- 1. Hind Leg and Hip (Remains comfortably planted on the hill) -->
+    <ellipse cx="462" cy="163" rx="14" ry="11" fill="#e2e8f0" />
+    <ellipse cx="464" cy="170" rx="9" ry="4" fill="#cbd5e1" />
+
+    <!-- 2. Tail (Animates from flat sleeping tuck to alert night wag) -->
+    <g class="dog-tail">
+      <g class="dog-tail-wag">
+        <path d="M472,158 Q486,150 482,138 Q476,138 474,148 Z" fill="#f1f5f9" />
+      </g>
+    </g>
+
+    <!-- 3. Torso & Spine (Pivots up smoothly from horizontal sleep to upright sit) -->
+    <g class="dog-spine">
+      <g class="sleeping-breath">
+        <!-- Main Torso Body -->
+        <ellipse cx="448" cy="155" rx="28" ry="18" fill="#f8fafc" />
+        <ellipse cx="448" cy="155" rx="25" ry="15" fill="#f1f5f9" />
+        <!-- Soft Spot mark on back -->
+        <path d="M438,144 Q450,138 456,146 Q450,154 440,150 Z" fill="#94a3b8" opacity="0.35" />
+        <!-- Front Paws resting -->
+        <ellipse cx="432" cy="168" rx="7" ry="4" fill="#e2e8f0" />
+      </g>
+    </g>
+
+    <!-- 4. Head, Neck & Snout (Raises smoothly into the night sky) -->
+    <g class="dog-head">
+      <!-- Neck Base -->
+      <path d="M432,158 L426,146 Q434,142 438,154 Z" fill="#ffffff" />
+
+      <!-- Head Circle -->
+      <circle cx="424" cy="154" r="15" fill="#ffffff" />
+
+      <!-- Flop Ear (relaxes down) -->
+      <path d="M428,144 Q438,150 435,163 Q427,163 426,152 Z" fill="#cbd5e1" />
+
+      <!-- Snout -->
+      <ellipse cx="414" cy="158" rx="8" ry="6" fill="#f8fafc" />
+      <!-- Black Nose Tip -->
+      <circle cx="410" cy="156" r="2.4" fill="#1e293b" />
+
+      <!-- Sleeping Calm Eye (curved happy arc) -->
+      <path d="M420,151 Q423,155 426,151" stroke="#475569" stroke-width="1.8" fill="none" stroke-linecap="round" />
+
+      <!-- Howling Open Mouth (Smoothly appears when neck arches up) -->
+      <g class="mouth-open">
+        <path d="M414,157 L410,155 L415,160 Z" fill="#0f172a" />
+      </g>
+    </g>
+  </g>
+</svg>
