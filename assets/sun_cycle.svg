@@ -24,20 +24,28 @@
       </feMerge>
     </filter>
 
-    <!-- Ultra-Bright Shooting Star Gradient 1 -->
-    <linearGradient id="meteorTail1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="20%" stop-color="#38bdf8" stop-opacity="0.95" />
-      <stop offset="60%" stop-color="#818cf8" stop-opacity="0.6" />
-      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+    <!-- Soft Vapor Dissipation Filter -->
+    <filter id="vaporGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Contrail Gradients (Atmospheric Vapor Trail) -->
+    <linearGradient id="contrailGrad" x1="720" y1="30" x2="220" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1" />
+      <stop offset="30%" stop-color="#bae6fd" stop-opacity="0.75" />
+      <stop offset="85%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
     </linearGradient>
 
-    <!-- Ultra-Bright Shooting Star Gradient 2 -->
-    <linearGradient id="meteorTail2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="25%" stop-color="#a7f3d0" stop-opacity="0.95" />
-      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    <linearGradient id="mistGrad" x1="720" y1="30" x2="220" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0" />
+      <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="85%" stop-color="#a7f3d0" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8" />
     </linearGradient>
   </defs>
 
@@ -156,63 +164,133 @@
       animation: rayRotate 16s linear infinite;
     }
 
-    /* ========================================================= */
-    /* ULTRA-VISIBLE SHOOTING STARS DURING NIGHT PHASE (55%-90%) */
-    /* ========================================================= */
+    /* ========================================================================= */
+    /* VAPOR CONTRAIL SHOOTING STAR WITH PERSISTENCE AND PARTICULATE DISSIPATION */
+    /* ========================================================================= */
 
-    /* Shooting Star 1: Streaks from top-right to mid-left (60% to 66%) */
-    @keyframes meteorPass1 {
-      0%, 59% {
-        transform: translate(750px, 15px) rotate(155deg);
+    /* 1. The Ionized Core Streak: Cuts fast across the sky */
+    @keyframes coreFlash {
+      0%, 63% {
+        stroke-dashoffset: 540;
         opacity: 0;
       }
-      60% {
+      63.2% {
         opacity: 1;
       }
-      65.5% {
-        transform: translate(260px, 150px) rotate(155deg);
+      64.4% {
+        stroke-dashoffset: 0;
         opacity: 1;
+      }
+      65.2% {
+        opacity: 0.8;
       }
       66.5% {
-        transform: translate(220px, 160px) rotate(155deg);
         opacity: 0;
       }
-      67%, 100% {
-        transform: translate(220px, 160px) rotate(155deg);
+      100% {
+        stroke-dashoffset: 0;
         opacity: 0;
       }
     }
 
-    /* Shooting Star 2: Streaks across mid-sky (76% to 82%) */
-    @keyframes meteorPass2 {
-      0%, 75% {
-        transform: translate(620px, 30px) rotate(150deg);
+    /* 2. The Vapor Contrail (Dissolves like an airplane contrail / mist) */
+    @keyframes vaporDissipate {
+      0%, 63% {
+        stroke-dashoffset: 540;
         opacity: 0;
+        stroke-width: 2px;
       }
-      76% {
+      63.3% {
+        opacity: 0.9;
+        stroke-width: 3px;
+      }
+      64.4% {
+        stroke-dashoffset: 0;
         opacity: 1;
+        stroke-width: 4px;
       }
-      81.5% {
-        transform: translate(140px, 140px) rotate(150deg);
-        opacity: 1;
+      /* Lingers in the sky like smoke/vapor */
+      65.5% {
+        opacity: 0.85;
+        stroke-width: 5.5px;
       }
-      82.5% {
-        transform: translate(100px, 150px) rotate(150deg);
+      /* Expands, disperses and gently evaporates into the night */
+      67.5% {
+        opacity: 0.5;
+        stroke-width: 7.5px;
+      }
+      69.5% {
+        opacity: 0.15;
+        stroke-width: 9px;
+      }
+      70.5%, 100% {
+        opacity: 0;
+        stroke-dashoffset: 0;
+        stroke-width: 10px;
+      }
+    }
+
+    /* 3. Outer Atmospheric Dispersion Glow */
+    @keyframes outerGlowFade {
+      0%, 63% {
         opacity: 0;
       }
-      83%, 100% {
-        transform: translate(100px, 150px) rotate(150deg);
+      64.2% {
+        opacity: 0.7;
+      }
+      66.0% {
+        opacity: 0.45;
+      }
+      69.0% {
+        opacity: 0;
+      }
+      100% {
         opacity: 0;
       }
     }
 
-    .meteor-1 {
-      animation: meteorPass1 20s linear infinite;
+    /* 4. Drifting Sparks and Particulates in the wake */
+    @keyframes particleSpark1 {
+      0%, 63.4% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+      63.8% { opacity: 1; transform: translate(-2px, 3px) scale(1.3); }
+      66.0% { opacity: 0.6; transform: translate(-6px, 8px) scale(0.9); }
+      68.5% { opacity: 0; transform: translate(-10px, 14px) scale(0.3); }
+      100% { opacity: 0; }
     }
 
-    .meteor-2 {
-      animation: meteorPass2 20s linear infinite;
+    @keyframes particleSpark2 {
+      0%, 63.8% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+      64.2% { opacity: 1; transform: translate(2px, 2px) scale(1.4); }
+      66.5% { opacity: 0.7; transform: translate(5px, 7px) scale(1.0); }
+      69.0% { opacity: 0; transform: translate(8px, 12px) scale(0.3); }
+      100% { opacity: 0; }
     }
+
+    @keyframes particleSpark3 {
+      0%, 64.2% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+      64.5% { opacity: 1; transform: translate(-3px, 1px) scale(1.5); }
+      67.0% { opacity: 0.6; transform: translate(-7px, 6px) scale(0.9); }
+      69.5% { opacity: 0; transform: translate(-12px, 11px) scale(0.2); }
+      100% { opacity: 0; }
+    }
+
+    .trail-core {
+      stroke-dasharray: 540;
+      animation: coreFlash 20s ease-out infinite;
+    }
+
+    .trail-vapor {
+      stroke-dasharray: 540;
+      animation: vaporDissipate 20s ease-out infinite;
+    }
+
+    .trail-outer {
+      animation: outerGlowFade 20s ease-out infinite;
+    }
+
+    .particle-p1 { animation: particleSpark1 20s ease-out infinite; }
+    .particle-p2 { animation: particleSpark2 20s ease-out infinite; }
+    .particle-p3 { animation: particleSpark3 20s ease-out infinite; }
     ]]>
   </style>
 
@@ -236,30 +314,36 @@
     <circle cx="710" cy="120" r="1.4" fill="#ffffff" class="twinkle-fast" />
   </g>
 
-  <!-- ==================================================== -->
-  <!-- HIGH-VISIBILITY SHOOTING STARS (NIGHT PASSES)        -->
-  <!-- ==================================================== -->
+  <!-- =============================================================== -->
+  <!-- LUMINOUS VAPOR CONTRAIL METEOR WITH DISSIPATING SMOKE & PARTICLES-->
+  <!-- =============================================================== -->
+  <g id="meteorContrailGroup">
+    <!-- Layer 1: Diffuse Atmospheric Glow -->
+    <path d="M720,30 L220,150" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" class="trail-outer" opacity="0.35" filter="url(#vaporGlow)" />
 
-  <!-- First Shooting Star (Active at 60%-66% of cycle) -->
-  <g class="meteor-1">
-    <!-- Bright Long Luminous Tail -->
-    <line x1="0" y1="0" x2="130" y2="0" stroke="url(#meteorTail1)" stroke-width="3" stroke-linecap="round" />
-    <line x1="0" y1="0" x2="60" y2="0" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
-    <!-- Bright Head with Multi-Layer Glow -->
-    <circle cx="0" cy="0" r="6" fill="#38bdf8" opacity="0.5" />
-    <circle cx="0" cy="0" r="3.5" fill="#bae6fd" />
-    <circle cx="0" cy="0" r="2" fill="#ffffff" />
-  </g>
+    <!-- Layer 2: Expanding Dissipating Vapor Smoke (Airplane Contrail effect) -->
+    <path d="M720,30 L220,150" stroke="url(#mistGrad)" stroke-linecap="round" class="trail-vapor" filter="url(#vaporGlow)" />
 
-  <!-- Second Shooting Star (Active at 76%-82% of cycle) -->
-  <g class="meteor-2">
-    <!-- Bright Long Luminous Tail -->
-    <line x1="0" y1="0" x2="110" y2="0" stroke="url(#meteorTail2)" stroke-width="2.6" stroke-linecap="round" />
-    <line x1="0" y1="0" x2="50" y2="0" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" />
-    <!-- Bright Head -->
-    <circle cx="0" cy="0" r="5" fill="#34d399" opacity="0.5" />
-    <circle cx="0" cy="0" r="3" fill="#a7f3d0" />
-    <circle cx="0" cy="0" r="1.8" fill="#ffffff" />
+    <!-- Layer 3: Ionized Brilliant Plasma Beam Core -->
+    <path d="M720,30 L220,150" stroke="url(#contrailGrad)" stroke-width="2.5" stroke-linecap="round" class="trail-core" />
+
+    <!-- Layer 4: Particulates / Stardust Embers Lingering in the Wake -->
+    <g>
+      <!-- Spark cluster along upper trail -->
+      <circle cx="620" cy="54" r="1.8" fill="#ffffff" class="particle-p1" filter="url(#glow)" />
+      <circle cx="605" cy="62" r="1.2" fill="#7dd3fc" class="particle-p1" />
+      <circle cx="585" cy="58" r="1.5" fill="#ffffff" class="particle-p2" />
+
+      <!-- Spark cluster along mid trail -->
+      <circle cx="490" cy="85" r="2.0" fill="#ffffff" class="particle-p2" filter="url(#glow)" />
+      <circle cx="470" cy="94" r="1.3" fill="#a7f3d0" class="particle-p2" />
+      <circle cx="450" cy="88" r="1.6" fill="#7dd3fc" class="particle-p3" />
+
+      <!-- Spark cluster along lower trail -->
+      <circle cx="360" cy="116" r="2.2" fill="#ffffff" class="particle-p3" filter="url(#glow)" />
+      <circle cx="340" cy="126" r="1.4" fill="#38bdf8" class="particle-p3" />
+      <circle cx="310" cy="128" r="1.8" fill="#ffffff" class="particle-p3" filter="url(#glow)" />
+    </g>
   </g>
 
   <!-- Animated Sun Group -->
