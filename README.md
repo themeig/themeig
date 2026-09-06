@@ -136,5 +136,5 @@ I’m a software developer and builder focused on backend architecture, workflow
 
 <div align="center">
   <!-- Waving Footer Banner -->
-  <img src="./assets/dog_cycle.svg" width="100%" alt="Synchronized Dog Day Night Cycle" />
+  <img src="./assets/dog_companion.svg" width="100%" alt="Synchronized Dog Day Night Cycle" />
 </div>
