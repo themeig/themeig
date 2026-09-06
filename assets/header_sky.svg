@@ -24,27 +24,27 @@
       </feMerge>
     </filter>
 
-    <!-- Vapor Contrail Gradients (Soft Atmospheric Smoke Trail) -->
+    <!-- Delicate Slender Vapor Contrail Gradients -->
     <linearGradient id="contrailMist" x1="720" y1="25" x2="200" y2="150" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
-      <stop offset="20%" stop-color="#38bdf8" stop-opacity="0.5" />
-      <stop offset="60%" stop-color="#bae6fd" stop-opacity="0.85" />
-      <stop offset="90%" stop-color="#ffffff" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.3" />
+      <stop offset="65%" stop-color="#bae6fd" stop-opacity="0.65" />
+      <stop offset="90%" stop-color="#ffffff" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
     </linearGradient>
 
     <linearGradient id="contrailDiffuse" x1="720" y1="25" x2="200" y2="150" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#818cf8" stop-opacity="0" />
-      <stop offset="35%" stop-color="#38bdf8" stop-opacity="0.35" />
-      <stop offset="70%" stop-color="#a7f3d0" stop-opacity="0.55" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.2" />
+      <stop offset="75%" stop-color="#a7f3d0" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.5" />
     </linearGradient>
 
-    <!-- Plasma Flash Beam Gradient -->
+    <!-- Slender Plasma Flash Beam Gradient -->
     <linearGradient id="plasmaBeam" x1="100%" y1="0%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="15%" stop-color="#bae6fd" stop-opacity="0.9" />
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="20%" stop-color="#bae6fd" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.35" />
       <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
     </linearGradient>
   </defs>
@@ -165,91 +165,90 @@
     }
 
     /* ========================================================================= */
-    /* ULTRA-RELIABLE GPU CONTRAIL ANIMATION (100% SUPPORTED IN ALL BROWSERS)   */
+    /* REFINED, CALM & SLENDER SHOOTING STAR (GRACEFUL FLIGHT + CONTRAIL DISSOLVE) */
     /* ========================================================================= */
 
-    /* 1. Fast Plasma Streak flashes across from top-right to bottom-left */
-    @keyframes streakFlight1 {
-      0%, 62.8% {
-        transform: translate(740px, 20px) rotate(166deg);
+    /* 1. Graceful Glide: Slower, takes 1.7s to traverse the night sky (61.5% to 70%) */
+    @keyframes streakGracefulFlight {
+      0%, 61.2% {
+        transform: translate(750px, 20px) rotate(166deg);
         opacity: 0;
       }
-      63.0% {
-        opacity: 1;
+      61.8% {
+        opacity: 0.85;
       }
-      64.2% {
+      69.0% {
         transform: translate(190px, 155px) rotate(166deg);
-        opacity: 1;
+        opacity: 0.8;
       }
-      64.8% {
-        transform: translate(160px, 162px) rotate(166deg);
+      70.2% {
+        transform: translate(150px, 164px) rotate(166deg);
         opacity: 0;
       }
       100% {
-        transform: translate(160px, 162px) rotate(166deg);
+        transform: translate(150px, 164px) rotate(166deg);
         opacity: 0;
       }
     }
 
-    /* 2. Lingering Vapor Contrail (Hangs in the sky, expands & evaporates) */
+    /* 2. Delicate Vapor Contrail: Lingers softly, expands gently and evaporates */
     @keyframes contrailLingering {
-      0%, 63.0% {
+      0%, 62.0% {
         opacity: 0;
-        transform: scaleY(0.4);
+        transform: scaleY(0.5);
       }
-      /* Appears as the streak passes through */
-      63.8% {
-        opacity: 0.95;
-        transform: scaleY(1.0);
-      }
-      /* Lingers like a bright airplane vapor trail */
-      65.5% {
+      63.0% {
         opacity: 0.8;
-        transform: scaleY(1.4);
+        transform: scaleY(0.9);
       }
-      /* Softly diffuses and widens into atmospheric mist */
-      67.5% {
-        opacity: 0.45;
+      /* Lingers delicately in the sky like fine contrail mist */
+      65.5% {
+        opacity: 0.65;
+        transform: scaleY(1.2);
+      }
+      /* Gently diffuses into the night atmosphere */
+      68.5% {
+        opacity: 0.35;
+        transform: scaleY(1.6);
+      }
+      /* Softly dissolves */
+      72.0% {
+        opacity: 0.08;
         transform: scaleY(2.0);
       }
-      /* Slowly dissolves into the night sky */
-      69.8% {
-        opacity: 0.1;
-        transform: scaleY(2.6);
-      }
-      70.5%, 100% {
+      73.0%, 100% {
         opacity: 0;
-        transform: scaleY(3.0);
+        transform: scaleY(2.2);
       }
     }
 
-    /* 3. Stardust Sparks drifting & fading in the wake */
+    /* 3. Subtle Stardust Specks drifting & dissolving */
     @keyframes sparksDrift1 {
-      0%, 63.3% { opacity: 0; transform: translate(0, 0) scale(0.4); }
-      63.8% { opacity: 1; transform: translate(-1px, 2px) scale(1.3); }
-      66.0% { opacity: 0.7; transform: translate(-4px, 6px) scale(0.9); }
-      68.5% { opacity: 0; transform: translate(-8px, 12px) scale(0.2); }
+      0%, 62.5% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+      63.5% { opacity: 0.85; transform: translate(-1px, 2px) scale(1.0); }
+      66.5% { opacity: 0.5; transform: translate(-3px, 5px) scale(0.7); }
+      70.0% { opacity: 0; transform: translate(-6px, 9px) scale(0.2); }
       100% { opacity: 0; }
     }
 
     @keyframes sparksDrift2 {
-      0%, 63.6% { opacity: 0; transform: translate(0, 0) scale(0.4); }
-      64.1% { opacity: 1; transform: translate(2px, 2px) scale(1.4); }
-      66.5% { opacity: 0.6; transform: translate(4px, 7px) scale(1.0); }
-      69.0% { opacity: 0; transform: translate(7px, 13px) scale(0.2); }
+      0%, 64.0% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+      65.0% { opacity: 0.8; transform: translate(2px, 1px) scale(1.0); }
+      67.5% { opacity: 0.45; transform: translate(3px, 4px) scale(0.7); }
+      71.0% { opacity: 0; transform: translate(5px, 8px) scale(0.2); }
       100% { opacity: 0; }
     }
 
     @keyframes sparksDrift3 {
-      0%, 63.9% { opacity: 0; transform: translate(0, 0) scale(0.4); }
-      64.4% { opacity: 1; transform: translate(-2px, 3px) scale(1.5); }
-      67.0% { opacity: 0.7; transform: translate(-5px, 8px) scale(0.9); }
-      69.5% { opacity: 0; transform: translate(-9px, 14px) scale(0.2); }
+      0%, 65.5% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+      66.5% { opacity: 0.85; transform: translate(-1px, 2px) scale(1.1); }
+      69.0% { opacity: 0.5; transform: translate(-3px, 5px) scale(0.7); }
+      72.5% { opacity: 0; transform: translate(-5px, 9px) scale(0.2); }
       100% { opacity: 0; }
     }
 
     .fast-plasma-streak {
-      animation: streakFlight1 20s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+      animation: streakGracefulFlight 20s cubic-bezier(0.3, 0.7, 0.4, 1) infinite;
     }
 
     .lingering-vapor-contrail {
@@ -284,38 +283,37 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- AUTHENTIC VAPOR CONTRAIL & METEOR FLASH (AIRPLANE CONTRAIL DISSOLVE)  -->
+  <!-- SLENDER, ELEGANT VAPOR CONTRAIL & CALM METEOR GLIDE                  -->
   <!-- ===================================================================== -->
 
-  <!-- A. Lingering Vapor Trail: Remains in the sky, diffuses and evaporates -->
+  <!-- A. Lingering Slender Vapor Trail (Dissolves gracefully into space) -->
   <g class="lingering-vapor-contrail">
-    <!-- Diffuse outer smoke ribbon -->
-    <path d="M720,25 L200,150" stroke="url(#contrailDiffuse)" stroke-width="8" stroke-linecap="round" />
-    <!-- Core dense vapor ribbon -->
-    <path d="M720,25 L200,150" stroke="url(#contrailMist)" stroke-width="4" stroke-linecap="round" />
-    <!-- Center glowing ionization line -->
-    <path d="M720,25 L200,150" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity="0.9" />
+    <!-- Subtle outer mist -->
+    <path d="M720,25 L200,150" stroke="url(#contrailDiffuse)" stroke-width="4.5" stroke-linecap="round" />
+    <!-- Fine inner vapor core -->
+    <path d="M720,25 L200,150" stroke="url(#contrailMist)" stroke-width="2.2" stroke-linecap="round" />
+    <!-- Center hairline glow -->
+    <path d="M720,25 L200,150" stroke="#ffffff" stroke-width="1.0" stroke-linecap="round" opacity="0.8" />
 
-    <!-- Dispersed Stardust Embers along the vapor wake -->
-    <circle cx="610" cy="52" r="1.8" fill="#ffffff" class="spark-p1" />
-    <circle cx="590" cy="60" r="1.2" fill="#7dd3fc" class="spark-p1" />
-    <circle cx="570" cy="56" r="1.5" fill="#ffffff" class="spark-p2" />
-    <circle cx="490" cy="82" r="2.0" fill="#ffffff" class="spark-p2" />
-    <circle cx="465" cy="91" r="1.3" fill="#a7f3d0" class="spark-p2" />
-    <circle cx="440" cy="85" r="1.6" fill="#7dd3fc" class="spark-p3" />
-    <circle cx="350" cy="112" r="2.2" fill="#ffffff" class="spark-p3" />
-    <circle cx="330" cy="122" r="1.4" fill="#38bdf8" class="spark-p3" />
-    <circle cx="295" cy="126" r="1.8" fill="#ffffff" class="spark-p3" />
+    <!-- Delicate Micro-particles / Stardust Specks along the wake -->
+    <circle cx="610" cy="52" r="1.3" fill="#ffffff" class="spark-p1" />
+    <circle cx="590" cy="60" r="0.9" fill="#7dd3fc" class="spark-p1" />
+    <circle cx="570" cy="56" r="1.1" fill="#ffffff" class="spark-p1" />
+    <circle cx="490" cy="82" r="1.4" fill="#ffffff" class="spark-p2" />
+    <circle cx="465" cy="91" r="0.9" fill="#a7f3d0" class="spark-p2" />
+    <circle cx="440" cy="85" r="1.2" fill="#7dd3fc" class="spark-p2" />
+    <circle cx="350" cy="112" r="1.5" fill="#ffffff" class="spark-p3" />
+    <circle cx="330" cy="122" r="1.0" fill="#38bdf8" class="spark-p3" />
+    <circle cx="295" cy="126" r="1.2" fill="#ffffff" class="spark-p3" />
   </g>
 
-  <!-- B. The Fast Meteor Flash: Slices across the sky leaving the contrail behind -->
+  <!-- B. The Slender Meteor Flash: Graceful glide cutting across the sky -->
   <g class="fast-plasma-streak">
-    <!-- Formless Tapered Plasma Tail -->
-    <polygon points="0,0 160,-6 180,-2 0,0" fill="url(#plasmaBeam)" opacity="0.9" />
-    <line x1="0" y1="0" x2="190" y2="0" stroke="url(#plasmaBeam)" stroke-width="2.5" stroke-linecap="round" />
-    <!-- Bright Leading Flash -->
-    <circle cx="0" cy="0" r="4" fill="#ffffff" />
-    <circle cx="0" cy="0" r="8" fill="#38bdf8" opacity="0.5" />
+    <!-- Fine Tapered Beam Tail -->
+    <line x1="0" y1="0" x2="110" y2="0" stroke="url(#plasmaBeam)" stroke-width="1.6" stroke-linecap="round" />
+    <!-- Delicate Leading Head -->
+    <circle cx="0" cy="0" r="2.2" fill="#ffffff" />
+    <circle cx="0" cy="0" r="4.5" fill="#38bdf8" opacity="0.4" />
   </g>
 
   <!-- Animated Sun Group -->
