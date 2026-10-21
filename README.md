@@ -1,19 +1,15 @@
 <div align="center">
 
-  <!-- Waving Header Banner -->
-  <img src="./assets/header_particles_star.svg" width="100%" alt="Day Night Cycle Banner" />
+  <img src="./assets/header_particles_star.svg" width="100%" alt="Header Banner" />
 
-  <!-- Multi-line Dynamic Typing Animation -->
   <a href="https://github.com/themeig">
-    <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=23&duration=2500&pause=1200&color=00F2FE&center=true&vCenter=true&width=700&height=50&lines=Hi+there!+%F0%9F%91%8B;Welcome+to+my+GitHub+profile!;Building+software%2C+automation+%26+scalable+tools" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=23&duration=2500&pause=1200&color=00F2FE&center=true&vCenter=true&width=700&height=50&lines=Hi+there!+%F0%9F%91%8B;Welcome+to+my+GitHub+profile!;Building+AI+products%2C+automation+%26+interactive+apps" alt="Typing SVG" />
   </a>
 
-  <!-- Quick Badges -->
   <p align="center">
     <a href="mailto:riccardoma07@gmail.com"><img src="https://img.shields.io/badge/Email-riccardoma07%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"></a>
     <a href="https://t.me/rikmillo"><img src="https://img.shields.io/badge/Telegram-%40rikmillo-2CA5E0?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"></a>
-    <img src="https://img.shields.io/badge/Focus-Software%20%26%20Automation-00C7FF?style=flat-square" alt="Focus">
-    <img src="https://img.shields.io/badge/Status-Building%2024%2F7-00FF88?style=flat-square" alt="Status">
+    <img src="https://img.shields.io/badge/Focus-AI%20%26%20Full--Stack-00C7FF?style=flat-square" alt="Focus">
     <img src="https://img.shields.io/badge/Powered%20By-Antigravity-8A2BE2?style=flat-square&logo=google&logoColor=white" alt="Antigravity">
   </p>
 
@@ -23,14 +19,7 @@
 
 ### ⚡ About Me
 
-> **"Building high-performance software, intelligent automation, and scalable systems."**
-
-I’m a software developer and builder focused on backend architecture, workflow automation, and developing practical digital products from 0 to 1. I enjoy designing clean, event-driven systems that handle complex logic and run reliably in production.
-
-* 🛠️ **Backend & Architecture:** Designing robust APIs, asynchronous data pipelines, and scalable services.
-* ⚡ **Automation & Systems:** Building autonomous workflows, integrations, and bots to streamline processes and eliminate friction.
-* 🤖 **AI & Agentic Systems:** Active user and builder with **Antigravity**, leveraging agentic coding workflows, autonomous multi-agent pipelines, and modern AI developer tooling.
-* 🚀 **Mindset:** Ship fast, write maintainable code, and solve real-world problems with practical engineering.
+Software developer focused on **AI-native applications**, **workflow automation**, and **real-time interactive web products**. I build end-to-end systems from 0 to 1—combining clean backend architecture, agentic AI workflows (**Antigravity** / **MCP**), and polished user experiences.
 
 ---
 
@@ -39,12 +28,37 @@ I’m a software developer and builder focused on backend architecture, workflow
 <table>
   <tr>
     <td width="50%" valign="top">
+      <h3 align="center">🎩 SecretHitlerGame</h3>
+      <p align="center">
+        <img src="https://img.shields.io/badge/Status-Live%20on%20Netlify-00FF88?style=flat-square" alt="Status" />
+        <img src="https://img.shields.io/badge/Stack-React%20%7C%20TypeScript%20%7C%20MQTT-3178C6?style=flat-square" alt="Stack" />
+      </p>
+      <p>Multi-phone &amp; TV real-time companion web app for playing the 1932 social deduction board game <i>Secret Hitler</i> around a physical table. Features zero-latency Web Audio SFX, 3D legislative card animations, adaptive soundtrack, and Star Wars 3D end credits.</p>
+      <p align="center">
+        <a href="https://github.com/themeig/SecretHitlerGame"><b>Codebase →</b></a> &nbsp;|&nbsp;
+        <a href="https://secret-hitler-pentaversion.netlify.app/"><b>Live App 🚀</b></a>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <h3 align="center">🗄️ DOVE-LO-AI-MESSO</h3>
+      <p align="center">
+        <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status" />
+        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20FastAPI%20%7C%20MCP-3776AB?style=flat-square" alt="Stack" />
+      </p>
+      <p>Encrypted AI vault for documents, deadlines, and physical objects. Powered by hybrid vector + deterministic B-Tree search, Google Drive auto-sync, background Folder Watcher, AES-256 encryption, and a 23-tool MCP Server.</p>
+      <p align="center">
+        <a href="https://github.com/themeig/DOVE-LO-AI-MESSO"><b>Explore Codebase →</b></a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
       <h3 align="center">⚡ Klippify-Automation-Engine</h3>
       <p align="center">
         <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status" />
         <img src="https://img.shields.io/badge/Stack-Python%20%7C%20Pipelines-blueviolet?style=flat-square" alt="Stack" />
       </p>
-      <p>High-throughput automated content pipeline for processing, transformation, and distribution workflows. Built for hands-off execution and scaling media workflows seamlessly.</p>
+      <p>High-throughput automated content pipeline for media processing, transformation, and autonomous distribution workflows.</p>
       <p align="center">
         <a href="https://github.com/themeig/Klippify-Automation-Engine"><b>Explore Codebase →</b></a>
       </p>
@@ -55,23 +69,9 @@ I’m a software developer and builder focused on backend architecture, workflow
         <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square" alt="Status" />
         <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20AI%20Agents-3178C6?style=flat-square" alt="Stack" />
       </p>
-      <p>AI-driven strategic co-pilot and automated decision assistant designed for modern founders, startups, and fast-moving technical teams.</p>
+      <p>AI-driven strategic co-pilot and automated decision assistant built for founders and fast-moving technical teams.</p>
       <p align="center">
         <a href="https://github.com/themeig/AI.CoFounder"><b>Explore Codebase →</b></a>
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-      <h3 align="center">🦅 PolyMarket_bot</h3>
-      <p align="center">
-        <img src="https://img.shields.io/badge/Status-Active%20Production-00FF88?style=flat-square" alt="Status" />
-        <img src="https://img.shields.io/badge/Stack-Python%20%7C%20AsyncIO%20%7C%20Polygon-00C7FF?style=flat-square" alt="Stack" />
-        <img src="https://img.shields.io/badge/Strategy-Liquidity%20Rewards%20%26%20Arb-8247E5?style=flat-square" alt="Strategy" />
-      </p>
-      <p align="center">Institutional-grade prediction market making and logical arbitrage engine. Automates daily Polymarket liquidity rewards harvesting, Avellaneda-Stoikov spread quoting, and zero-risk on-chain complete set token merging on Polygon.</p>
-      <p align="center">
-        <a href="https://github.com/themeig/PolyMarket_bot"><b>Explore Codebase →</b></a>
       </p>
     </td>
   </tr>
@@ -79,63 +79,27 @@ I’m a software developer and builder focused on backend architecture, workflow
 
 ---
 
-### 🛠️ Tech Stack & Arsenal
+### 🛠️ Tech Stack
 
 <div align="center">
 
-#### **Languages & Core**
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Bash](https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
-
-#### **Backend, APIs & Concurrency**
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![AsyncIO](https://img.shields.io/badge/AsyncIO%20%2F%20Event_Loops-00599C?style=for-the-badge)
-![WebSockets](https://img.shields.io/badge/WebSockets-010101?style=for-the-badge&logo=socketdotio&logoColor=white)
-
-#### **DevOps, Tools & Ecosystems**
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Antigravity](https://img.shields.io/badge/Antigravity-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Telegram API](https://img.shields.io/badge/Telegram_Bot_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
-![Web3](https://img.shields.io/badge/Web3%20%2F%20EVM-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 </div>
 
 ---
 
-### 📊 GitHub Activity & Streak
-
 <div align="center">
-
   <img src="https://streak-stats.demolab.com/?user=themeig&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-
 </div>
 
----
-
-### 💬 Connect & Collaborate
-
 <div align="center">
-
-  <a href="https://github.com/themeig">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-  <a href="https://t.me/rikmillo">
-    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" />
-  </a>
-  <a href="mailto:riccardoma07@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-
-</div>
-
-<br>
-
-<div align="center">
-  <!-- Waving Footer Banner -->
-  <img src="./assets/dog_companion.svg" width="100%" alt="Synchronized Dog Day Night Cycle" />
+  <img src="./assets/dog_companion.svg" width="100%" alt="Dog Day Night Cycle" />
 </div>
